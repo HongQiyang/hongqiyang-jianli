@@ -1077,6 +1077,52 @@ h2 {
   font-weight: 850;
 }
 
+.practice-showcase {
+  border-top: 1px solid var(--line);
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.practice-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)),
+    var(--surface);
+  backdrop-filter: blur(16px) saturate(1.1);
+}
+
+.practice-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #f8fbff;
+}
+
+.practice-card-copy {
+  padding: 20px;
+}
+
+.practice-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.practice-caption {
+  margin: 16px 0 0;
+  color: var(--soft);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .timeline-title-link {
   color: var(--ink);
   text-decoration: none;
@@ -1661,6 +1707,10 @@ h2 {
   }
 
   .report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-grid {
     grid-template-columns: 1fr;
   }
 

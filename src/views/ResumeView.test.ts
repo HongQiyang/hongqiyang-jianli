@@ -54,5 +54,20 @@ describe('ResumeView', () => {
     expect(wrapper.find('[data-to="/projects/haisi"]').exists()).toBe(true)
     expect(wrapper.find('.media-report-section').exists()).toBe(false)
     expect(wrapper.findAll('.timeline-report-list a')).toHaveLength(26)
+
+    const resumeLayout = wrapper.find('.resume-layout')
+    const practiceShowcase = wrapper.find('.practice-showcase')
+    expect(practiceShowcase.exists()).toBe(true)
+    expect(
+      Boolean(
+        resumeLayout.element.compareDocumentPosition(practiceShowcase.element) &
+          Node.DOCUMENT_POSITION_FOLLOWING
+      )
+    ).toBe(true)
+    expect(wrapper.findAll('.practice-card')).toHaveLength(3)
+    expect(wrapper.findAll('.practice-card img')).toHaveLength(3)
+    expect(wrapper.find('img[alt="2024寒假返校宣讲现场"]').exists()).toBe(true)
+    expect(wrapper.find('img[alt="嘉庚号香港开放日志愿服务证书"]').exists()).toBe(true)
+    expect(wrapper.find('img[alt="2025暑期海洋科普实践现场"]').exists()).toBe(true)
   })
 })

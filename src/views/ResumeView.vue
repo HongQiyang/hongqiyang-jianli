@@ -80,24 +80,6 @@
         </section>
 
         <section class="resume-section" data-reveal>
-          <p class="eyebrow">Practice</p>
-          <h2>社会实践</h2>
-          <article
-            v-for="practice in resume.practices"
-            :key="practice.title"
-            class="timeline-item"
-          >
-            <p class="timeline-date">{{ practice.date }}</p>
-            <h3>{{ practice.title }}</h3>
-            <p class="timeline-role">{{ practice.role }}</p>
-            <p class="timeline-copy">{{ practice.result }}</p>
-            <ul class="clean-list compact-list">
-              <li v-for="point in practice.points" :key="point">{{ point }}</li>
-            </ul>
-          </article>
-        </section>
-
-        <section class="resume-section" data-reveal>
           <p class="eyebrow">Education</p>
           <h2>教育背景</h2>
           <article
@@ -139,6 +121,36 @@
         </section>
       </aside>
     </section>
+
+    <section class="practice-showcase section-pad" aria-label="社会实践" data-reveal>
+      <div class="section-heading">
+        <p class="eyebrow">Practice</p>
+        <h2>社会实践</h2>
+      </div>
+      <div class="practice-grid">
+        <article
+          v-for="practice in resume.practices"
+          :key="practice.title"
+          class="practice-card"
+        >
+          <img
+            :src="asset(practice.image.src)"
+            :alt="practice.image.alt"
+            loading="lazy"
+          />
+          <div class="practice-card-copy">
+            <p class="timeline-date">{{ practice.date }}</p>
+            <h3>{{ practice.title }}</h3>
+            <p class="timeline-role">{{ practice.role }}</p>
+            <p class="timeline-copy">{{ practice.result }}</p>
+            <ul class="clean-list compact-list">
+              <li v-for="point in practice.points" :key="point">{{ point }}</li>
+            </ul>
+            <p class="practice-caption">{{ practice.image.caption }}</p>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -146,6 +158,10 @@
 import { onMounted } from 'vue'
 import { resume } from '../data/portfolio'
 import { runPageMotion } from '../animations'
+
+function asset(src: string): string {
+  return `${import.meta.env.BASE_URL}${src}`
+}
 
 onMounted(() => runPageMotion())
 </script>

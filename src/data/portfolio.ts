@@ -49,6 +49,7 @@ type ResumePractice = {
   role: string
   result: string
   points: string[]
+  image: EvidenceItem
 }
 
 const haisiReportEntries = [
@@ -160,7 +161,13 @@ export const resume = {
       points: [
         '面向母校福建省厦门第一中学开展返校宣讲，围绕大学学习、专业选择与校园生活进行经验分享。',
         '参与宣讲材料制作、现场汇报与团队展示，所在队伍获评厦门大学寒假社会实践活动优秀团队。'
-      ]
+      ],
+      image: {
+        kind: 'image',
+        src: 'assets/practice/winter-return-talk.jpg',
+        alt: '2024寒假返校宣讲现场',
+        caption: '返校宣讲现场：面向厦门一中同学分享大学学习、专业选择与校园经历。'
+      }
     },
     {
       date: '2024.07 - 2025.06',
@@ -170,7 +177,13 @@ export const resume = {
       points: [
         '参与“青春为中国式现代化挺膺担当”主题暑期社会实践，完成现场调研、活动组织与材料整理。',
         '在“嘉庚”号科考船停靠香港海运码头开放日活动中参与志愿服务与展览协助，支撑公众科普与国际交流场景。'
-      ]
+      ],
+      image: {
+        kind: 'image',
+        src: 'assets/practice/kageng-open-day-certificate.png',
+        alt: '嘉庚号香港开放日志愿服务证书',
+        caption: '嘉庚号香港开放日志愿服务：参与公众开放日与展览协助，获得 Certificate of Appreciation。'
+      }
     },
     {
       date: '2025.07 - 2025.12',
@@ -180,7 +193,13 @@ export const resume = {
       points: [
         '参与面向中小学的海洋科普活动，围绕“海底火山现象模拟小实验”等内容进行现场讲解与互动演示。',
         '结合海洋学科背景完成实验设计、演示组织和实践成果整理，将专业学习转化为公众科普表达。'
-      ]
+      ],
+      image: {
+        kind: 'image',
+        src: 'assets/practice/ocean-science-demo.png',
+        alt: '2025暑期海洋科普实践现场',
+        caption: '海洋科普现场：围绕海底火山现象模拟小实验进行讲解与互动演示。'
+      }
     }
   ] as ResumePractice[],
   mediaReports: haisiReports,
