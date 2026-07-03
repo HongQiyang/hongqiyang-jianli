@@ -60,7 +60,7 @@ describe('HomeView hero', () => {
     expect(wrapper.text()).not.toContain('hongqiyang@stu.xmu.edu.cn')
   })
 
-  it('shows focus modules for engineering theory, hardware, software and system fusion', () => {
+  it('shows the updated focus modules for algorithm, hardware, software and underwater testing', () => {
     const wrapper = mount(HomeView, {
       global: {
         stubs: {
@@ -74,9 +74,13 @@ describe('HomeView hero', () => {
 
     expect(wrapper.find('.focus-section').exists()).toBe(true)
     expect(wrapper.findAll('.focus-module')).toHaveLength(4)
-    expect(wrapper.text()).toContain('将抽象理论落地为可验证工程系统')
-    expect(wrapper.text()).toContain('硬件平台搭建')
-    expect(wrapper.text()).toContain('软件平台开发')
-    expect(wrapper.text()).toContain('软硬件融合')
+    expect(wrapper.text()).toContain('核心算法落地')
+    expect(wrapper.text()).toContain('将复杂的声学定位与控制理论，转化为高效、低延迟的可执行代码。')
+    expect(wrapper.text()).toContain('底层硬件架构')
+    expect(wrapper.text()).toContain('从精密前置电路的 PCB 绘制，到多架构主控平台的嵌入式系统开发。')
+    expect(wrapper.text()).toContain('上层软件开发')
+    expect(wrapper.text()).toContain('搭建直观的交互界面，打通信号处理、视觉识别与数据分析的完整链路。')
+    expect(wrapper.text()).toContain('水下平台实测')
+    expect(wrapper.text()).toContain('以仿生潜水器为工程载体，全面验证水下感知与控制系统的可靠性。')
   })
 })
