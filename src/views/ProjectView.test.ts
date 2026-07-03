@@ -1,0 +1,64 @@
+import { mount } from '@vue/test-utils'
+import { describe, expect, it, vi } from 'vitest'
+import { createRouter, createWebHistory } from 'vue-router'
+import ProjectView from './ProjectView.vue'
+
+vi.mock('../animations', () => ({
+  runPageMotion: vi.fn()
+}))
+
+describe('ProjectView hero', () => {
+  it('uses the compact one-line title style for project detail pages', async () => {
+    const router = createRouter({
+      history: createWebHistory('/hongqiyang-jianli/'),
+      routes: [{ path: '/projects/:slug', component: ProjectView }]
+    })
+
+    router.push('/projects/mudskipper')
+    await router.isReady()
+
+    const wrapper = mount(ProjectView, {
+      global: {
+        plugins: [router],
+        stubs: {
+          RouterLink: {
+            props: ['to'],
+            template: '<a><slot /></a>'
+          }
+        }
+      }
+    })
+
+    const title = wrapper.find('h1')
+    expect(title.classes()).toContain('project-hero-title')
+    expect(title.text()).toBe('面向仿生水声隐蔽通信的弹涂鱼机器人')
+  })
+
+  it('shows media and official report links for the haisi voyage project', async () => {
+    const router = createRouter({
+      history: createWebHistory('/hongqiyang-jianli/'),
+      routes: [{ path: '/projects/:slug', component: ProjectView }]
+    })
+
+    router.push('/projects/haisi')
+    await router.isReady()
+
+    const wrapper = mount(ProjectView, {
+      global: {
+        plugins: [router],
+        stubs: {
+          RouterLink: {
+            props: ['to'],
+            template: '<a><slot /></a>'
+          }
+        }
+      }
+    })
+
+    expect(wrapper.find('.report-section').exists()).toBe(true)
+    expect(wrapper.text()).toContain('国家级权威媒体报道')
+    expect(wrapper.text()).toContain('新华网')
+    expect(wrapper.text()).toContain('人民网')
+    expect(wrapper.findAll('.report-card')).toHaveLength(4)
+  })
+})
