@@ -29,5 +29,7 @@ describe('ResumeView', () => {
     expect(text).toContain('汇报二等奖')
     expect(text).toContain('仿生海豚机器人省级大创项目')
     expect(text).toContain('电控运动模块')
+    expect(wrapper.find('.media-report-section').exists()).toBe(false)
+    expect(wrapper.findAll('.timeline-report-list a')).toHaveLength(4)
   })
 })

@@ -1077,11 +1077,17 @@ h2 {
   font-weight: 850;
 }
 
+.timeline-report-list {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
 .compact-report-list {
   display: grid;
   gap: 12px;
 }
 
+.timeline-report-list a,
 .compact-report-list a {
   display: grid;
   gap: 6px;
@@ -1089,6 +1095,11 @@ h2 {
   padding: 16px 0;
 }
 
+.timeline-report-list a:first-child {
+  border-top: 0;
+}
+
+.timeline-report-list span,
 .compact-report-list span,
 .report-card span {
   color: var(--warm);
@@ -1096,12 +1107,14 @@ h2 {
   font-weight: 900;
 }
 
+.timeline-report-list strong,
 .compact-report-list strong,
 .report-card strong {
   color: var(--accent);
   font-size: 18px;
 }
 
+.timeline-report-list em,
 .compact-report-list em,
 .report-card em {
   color: var(--ink);

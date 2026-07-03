@@ -22,6 +22,19 @@
             <ul class="clean-list compact-list">
               <li v-for="point in expedition.points" :key="point">{{ point }}</li>
             </ul>
+            <div class="timeline-report-list" aria-label="海丝学堂媒体与官方报道">
+              <a
+                v-for="report in resume.mediaReports"
+                :key="report.href"
+                :href="report.href"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>{{ report.category }}</span>
+                <strong>{{ report.source }}</strong>
+                <em>{{ report.title }}</em>
+              </a>
+            </div>
           </article>
         </section>
 
@@ -55,24 +68,6 @@
               <li v-for="point in item.points" :key="point">{{ point }}</li>
             </ul>
           </article>
-        </section>
-
-        <section class="resume-section media-report-section" data-reveal>
-          <p class="eyebrow">Reports</p>
-          <h2>媒体与官方报道</h2>
-          <div class="compact-report-list">
-            <a
-              v-for="report in resume.mediaReports"
-              :key="report.href"
-              :href="report.href"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>{{ report.category }}</span>
-              <strong>{{ report.source }}</strong>
-              <em>{{ report.title }}</em>
-            </a>
-          </div>
         </section>
 
         <section class="resume-section" data-reveal>
