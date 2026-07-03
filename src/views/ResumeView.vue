@@ -71,6 +71,24 @@
         </section>
 
         <section class="resume-section" data-reveal>
+          <p class="eyebrow">Practice</p>
+          <h2>社会实践</h2>
+          <article
+            v-for="practice in resume.practices"
+            :key="practice.title"
+            class="timeline-item"
+          >
+            <p class="timeline-date">{{ practice.date }}</p>
+            <h3>{{ practice.title }}</h3>
+            <p class="timeline-role">{{ practice.role }}</p>
+            <p class="timeline-copy">{{ practice.result }}</p>
+            <ul class="clean-list compact-list">
+              <li v-for="point in practice.points" :key="point">{{ point }}</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="resume-section" data-reveal>
           <p class="eyebrow">Education</p>
           <h2>教育背景</h2>
           <article

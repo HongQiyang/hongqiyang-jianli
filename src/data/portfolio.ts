@@ -43,6 +43,14 @@ type ResumeResearchProject = {
   points: string[]
 }
 
+type ResumePractice = {
+  date: string
+  title: string
+  role: string
+  result: string
+  points: string[]
+}
+
 const haisiReportEntries = [
   ['国家级权威媒体报道', '新华网', '“嘉庚”号科考船再启航将首次穿越赤道', '2025年7月24日', 'http://www.fj.xinhuanet.com/20250724/dbe58acd441e4dceaddfa0c11641498c/c.html'],
   ['国家级权威媒体报道', '人民网', '厦门大学“嘉庚”号科考船在雅加达举办公众开放日活动', '2025年8月9日', 'https://world.people.com.cn/n1/2025/0809/c1002-40539246.html'],
@@ -142,6 +150,38 @@ export const resume = {
     }
   ],
   researchProjects: [] as ResumeResearchProject[],
+  practices: [
+    {
+      date: '2024.02 - 2024.04',
+      title: '2024寒假返校宣讲',
+      role: '厦门第一大学队成员 / 宣讲汇报人',
+      result: '厦门大学2024年寒假社会实践活动“优秀团队”',
+      points: [
+        '面向母校福建省厦门第一中学开展返校宣讲，围绕大学学习、专业选择与校园生活进行经验分享。',
+        '参与宣讲材料制作、现场汇报与团队展示，所在队伍获评厦门大学寒假社会实践活动优秀团队。'
+      ]
+    },
+    {
+      date: '2024.07 - 2025.06',
+      title: '2024暑期社会实践与嘉庚号开放日志愿服务',
+      role: '实践队成员 / 嘉庚号开放日志愿者',
+      result: '获评2024年主题暑期社会实践活动“积极分子”，并获得嘉庚号香港开放日志愿服务 Certificate of Appreciation',
+      points: [
+        '参与“青春为中国式现代化挺膺担当”主题暑期社会实践，完成现场调研、活动组织与材料整理。',
+        '在“嘉庚”号科考船停靠香港海运码头开放日活动中参与志愿服务与展览协助，支撑公众科普与国际交流场景。'
+      ]
+    },
+    {
+      date: '2025.07 - 2025.12',
+      title: '2025暑期海洋科普社会实践',
+      role: '实践队成员 / 科普讲解',
+      result: '获评厦门大学2025年主题暑期社会实践活动“积极分子”',
+      points: [
+        '参与面向中小学的海洋科普活动，围绕“海底火山现象模拟小实验”等内容进行现场讲解与互动演示。',
+        '结合海洋学科背景完成实验设计、演示组织和实践成果整理，将专业学习转化为公众科普表达。'
+      ]
+    }
+  ] as ResumePractice[],
   mediaReports: haisiReports,
   education: [
     {
