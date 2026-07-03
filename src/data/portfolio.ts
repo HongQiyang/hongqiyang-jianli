@@ -50,6 +50,8 @@ type ResumePractice = {
   result: string
   points: string[]
   image: EvidenceItem
+  honors?: string[]
+  reports?: ReportLink[]
 }
 
 const haisiReportEntries = [
@@ -100,6 +102,16 @@ export const profile = {
   title: '洪旗阳 | 海洋声学与仿生机器人',
   subtitle: 'Ocean Acoustics · Biomimetic Robotics · Underwater Systems',
   intro: '突破水声通信技术，自主研制仿生机器人与水下探测系统，致力于深海领域的探索与开发',
+  identity: '厦门大学 · 海洋技术（海洋物理方向）· 本科生',
+  metrics: ['GPA 3.80 / 4.00', '专业排名 3 / 30', 'CET-4 554 / CET-6 501'],
+  researchObjective:
+    '聚焦智能海洋装备与水声感知，期望在研究生阶段围绕水下声源定位、海洋声学观测与仿生机器人平台开展系统性研究。',
+  honors: [
+    '第十八届先进机器人及仿真技术大赛国赛一等奖',
+    '发明专利申请进入实质审查阶段',
+    '厦门大学海洋与地球学院第五届拔尖本科生学术论坛汇报二等奖',
+    '嘉庚号香港开放日志愿服务 Certificate of Appreciation'
+  ],
   about:
     '洪旗阳，本科就读于厦门大学海洋技术方向，项目兴趣集中在海洋声学、仿生机器人、水下通信与水下感知系统。曾就读于福建省厦门第一中学。'
 }
@@ -175,9 +187,18 @@ export const resume = {
       role: '实践队成员 / 嘉庚号开放日志愿者',
       result: '获评2024年主题暑期社会实践活动“积极分子”，并获得嘉庚号香港开放日志愿服务 Certificate of Appreciation',
       points: [
-        '参与“青春为中国式现代化挺膺担当”主题暑期社会实践，完成现场调研、活动组织与材料整理。',
-        '在“嘉庚”号科考船停靠香港海运码头开放日活动中参与志愿服务与展览协助，支撑公众科普与国际交流场景。'
+        '参与“青春为中国式现代化挺膺担当”主题暑期社会实践，完成现场调研、活动组织、材料整理与成果汇总。',
+        '在“嘉庚”号科考船停靠香港海运码头开放日活动中参与志愿服务与展览协助，支撑公众科普、海洋文化传播与国际交流场景。',
+        '结合嘉庚号公众开放、海洋科普传播与校内社会实践总结材料，整理形成可展示的志愿服务、荣誉证明与媒体报道链条。'
       ],
+      honors: [
+        '厦门大学2024年主题暑期社会实践活动“积极分子”',
+        '嘉庚号香港开放日志愿服务 Certificate of Appreciation',
+        '嘉庚号公众开放日展览协助与科普志愿服务经历'
+      ],
+      reports: haisiReports.filter((report) =>
+        ['人民网', '中国新闻网', '厦门日报', '厦门网'].includes(report.source)
+      ).slice(0, 4),
       image: {
         kind: 'image',
         src: 'assets/practice/kageng-open-day-certificate.png',

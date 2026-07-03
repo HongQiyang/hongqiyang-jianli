@@ -37,6 +37,25 @@
           <ul class="clean-list compact-list">
             <li v-for="point in practice.points" :key="point">{{ point }}</li>
           </ul>
+          <div v-if="practice.honors?.length || practice.reports?.length" class="practice-proof-block">
+            <h4>荣誉与报道</h4>
+            <div v-if="practice.honors?.length" class="credential-row practice-honor-row">
+              <span v-for="honor in practice.honors" :key="honor">{{ honor }}</span>
+            </div>
+            <div v-if="practice.reports?.length" class="compact-report-list practice-report-list">
+              <a
+                v-for="report in practice.reports"
+                :key="report.href"
+                :href="report.href"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>{{ report.category }}</span>
+                <strong>{{ report.source }}</strong>
+                <em>{{ report.title }}</em>
+              </a>
+            </div>
+          </div>
           <p class="practice-caption">{{ practice.image.caption }}</p>
         </div>
         <a

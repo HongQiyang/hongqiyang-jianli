@@ -35,10 +35,36 @@ describe('HomeView hero', () => {
       }
     })
 
-    expect(wrapper.find('.hero-education').exists()).toBe(false)
     expect(wrapper.find('.project-directory').exists()).toBe(false)
     expect(wrapper.find('[data-to="/projects"]').exists()).toBe(true)
     expect(wrapper.find('[data-to="/resume"]').exists()).toBe(true)
+  })
+
+  it('shows personal profile metrics and representative honors on the homepage', () => {
+    const wrapper = mount(HomeView, {
+      global: {
+        stubs: {
+          RouterLink: {
+            props: ['to'],
+            template: '<a :data-to="to"><slot /></a>'
+          }
+        }
+      }
+    })
+    const text = wrapper.text()
+
+    expect(wrapper.find('.profile-overview').exists()).toBe(true)
+    expect(text).toContain('厦门大学 · 海洋技术（海洋物理方向）· 本科生')
+    expect(text).toContain('GPA 3.80 / 4.00')
+    expect(text).toContain('专业排名 3 / 30')
+    expect(text).toContain('CET-4 554 / CET-6 501')
+    expect(text).toContain('研究目标')
+    expect(text).toContain('聚焦智能海洋装备与水声感知')
+    expect(text).toContain('代表荣誉')
+    expect(text).toContain('第十八届先进机器人及仿真技术大赛国赛一等奖')
+    expect(text).toContain('发明专利申请进入实质审查阶段')
+    expect(text).toContain('拔尖本科生学术论坛汇报二等奖')
+    expect(text).toContain('嘉庚号香港开放日志愿服务 Certificate of Appreciation')
   })
 
   it('uses the stronger opening statement and leaves email to the contact page', () => {

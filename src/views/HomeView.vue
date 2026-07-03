@@ -12,6 +12,28 @@
       </div>
     </section>
 
+    <section class="profile-overview section-pad" aria-labelledby="profile-title" data-reveal>
+      <div class="profile-copy">
+        <p class="eyebrow">Profile</p>
+        <h2 id="profile-title">个人信息</h2>
+        <p class="profile-identity">{{ profile.identity }}</p>
+        <div class="profile-metrics" aria-label="成绩与英语">
+          <span v-for="metric in profile.metrics" :key="metric">{{ metric }}</span>
+        </div>
+        <p class="profile-objective">
+          <strong>研究目标</strong>
+          {{ profile.researchObjective }}
+        </p>
+      </div>
+      <div class="honor-panel">
+        <p class="eyebrow">Honors</p>
+        <h2>代表荣誉</h2>
+        <ul class="clean-list compact-list">
+          <li v-for="honor in profile.honors" :key="honor">{{ honor }}</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="focus-section section-pad" aria-labelledby="focus-title">
       <div class="focus-copy" data-reveal>
         <p class="eyebrow">Focus</p>

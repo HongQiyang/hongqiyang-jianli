@@ -813,6 +813,72 @@ h2 {
   border-bottom: 1px solid var(--line);
 }
 
+.profile-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 28px;
+  align-items: stretch;
+  border-top: 1px solid var(--line);
+}
+
+.profile-copy,
+.honor-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+    var(--surface);
+  backdrop-filter: blur(16px) saturate(1.1);
+}
+
+.profile-identity {
+  margin: 14px 0 0;
+  color: #dffcff;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.profile-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.profile-metrics span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(189, 235, 255, 0.22);
+  border-radius: 999px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(238, 248, 255, 0.86);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.profile-objective {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.profile-objective strong {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+.honor-panel h2 {
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.honor-panel .compact-list {
+  margin-top: 22px;
+}
+
 .focus-copy {
   display: grid;
   align-content: center;
@@ -1107,6 +1173,34 @@ h2 {
 
 .practice-entry .keyword-row {
   grid-column: 2 / -1;
+}
+
+.practice-proof-block {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.practice-proof-block h4 {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.practice-honor-row {
+  margin-bottom: 14px;
+}
+
+.practice-report-list {
+  gap: 0;
+}
+
+.practice-report-list a {
+  padding: 12px 0;
+}
+
+.practice-report-list strong {
+  font-size: 16px;
 }
 
 .practice-card {
@@ -1602,6 +1696,7 @@ h2 {
   .content-grid,
   .split-section,
   .resume-layout,
+  .profile-overview,
   .focus-section {
     grid-template-columns: 1fr;
   }

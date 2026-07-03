@@ -9,39 +9,6 @@
     <section class="resume-layout" aria-label="简历内容">
       <div class="resume-main">
         <section class="resume-section" data-reveal>
-          <p class="eyebrow">Scientific Voyage</p>
-          <h2>海丝远洋科考经历</h2>
-          <article
-            v-for="expedition in resume.expeditions"
-            :key="expedition.title"
-            class="timeline-item"
-          >
-            <p class="timeline-date">{{ expedition.date }}</p>
-            <h3>
-              <RouterLink
-                v-if="expedition.href"
-                class="timeline-title-link"
-                :to="expedition.href"
-              >
-                {{ expedition.title }}
-              </RouterLink>
-              <template v-else>{{ expedition.title }}</template>
-            </h3>
-            <p class="timeline-role">{{ expedition.role }}</p>
-            <ul class="clean-list compact-list">
-              <li v-for="point in expedition.points" :key="point">{{ point }}</li>
-            </ul>
-            <RouterLink
-              v-if="expedition.href"
-              class="text-link voyage-detail-link"
-              :to="expedition.href"
-            >
-              查看航次详情与报道 →
-            </RouterLink>
-          </article>
-        </section>
-
-        <section class="resume-section" data-reveal>
           <p class="eyebrow">Conference</p>
           <h2>论坛会议</h2>
           <article
