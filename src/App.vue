@@ -62,6 +62,7 @@
         <RouterLink to="/">首页</RouterLink>
         <RouterLink to="/projects">项目</RouterLink>
         <RouterLink to="/resume">简历</RouterLink>
+        <RouterLink to="/practice">实践</RouterLink>
         <RouterLink to="/contact">联系</RouterLink>
       </nav>
     </header>

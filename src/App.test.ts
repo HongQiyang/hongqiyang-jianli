@@ -34,7 +34,7 @@ describe('App background', () => {
 })
 
 describe('App navigation', () => {
-  it('uses four main sections: home, projects, resume and contact', () => {
+  it('uses five main sections: home, projects, resume, practice and contact', () => {
     const wrapper = mount(App, {
       global: {
         stubs: {
@@ -48,11 +48,12 @@ describe('App navigation', () => {
     })
 
     const links = wrapper.findAll('.site-nav a')
-    expect(links.map((link) => link.text())).toEqual(['首页', '项目', '简历', '联系'])
+    expect(links.map((link) => link.text())).toEqual(['首页', '项目', '简历', '实践', '联系'])
     expect(links.map((link) => link.attributes('data-to'))).toEqual([
       '/',
       '/projects',
       '/resume',
+      '/practice',
       '/contact'
     ])
   })

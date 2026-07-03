@@ -1087,6 +1087,28 @@ h2 {
   gap: 18px;
 }
 
+.practice-entry {
+  grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr) auto;
+  align-items: start;
+}
+
+.practice-entry-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #f8fbff;
+}
+
+.practice-entry-copy {
+  min-width: 0;
+}
+
+.practice-entry .keyword-row {
+  grid-column: 2 / -1;
+}
+
 .practice-card {
   min-width: 0;
   overflow: hidden;
@@ -1676,6 +1698,14 @@ h2 {
 
   .project-entry {
     grid-template-columns: 1fr;
+  }
+
+  .practice-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-entry .keyword-row {
+    grid-column: 1 / -1;
   }
 
   .focus-grid {

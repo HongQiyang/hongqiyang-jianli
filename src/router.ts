@@ -3,6 +3,7 @@ import HomeView from './views/HomeView.vue'
 import ProjectsView from './views/ProjectsView.vue'
 import ProjectView from './views/ProjectView.vue'
 import ResumeView from './views/ResumeView.vue'
+import PracticeView from './views/PracticeView.vue'
 import ContactView from './views/ContactView.vue'
 
 export const router = createRouter({
@@ -12,6 +13,7 @@ export const router = createRouter({
     { path: '/projects', name: 'projects', component: ProjectsView },
     { path: '/projects/:slug', name: 'project', component: ProjectView },
     { path: '/resume', name: 'resume', component: ResumeView },
+    { path: '/practice', name: 'practice', component: PracticeView },
     { path: '/contact', name: 'contact', component: ContactView }
   ],
   scrollBehavior() {

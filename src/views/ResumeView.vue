@@ -31,19 +31,13 @@
             <ul class="clean-list compact-list">
               <li v-for="point in expedition.points" :key="point">{{ point }}</li>
             </ul>
-            <div class="timeline-report-list" aria-label="海丝学堂媒体与官方报道">
-              <a
-                v-for="report in resume.mediaReports"
-                :key="report.href"
-                :href="report.href"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>{{ report.category }}</span>
-                <strong>{{ report.source }}</strong>
-                <em>{{ report.title }}</em>
-              </a>
-            </div>
+            <RouterLink
+              v-if="expedition.href"
+              class="text-link voyage-detail-link"
+              :to="expedition.href"
+            >
+              查看航次详情与报道 →
+            </RouterLink>
           </article>
         </section>
 
@@ -122,35 +116,6 @@
       </aside>
     </section>
 
-    <section class="practice-showcase section-pad" aria-label="社会实践" data-reveal>
-      <div class="section-heading">
-        <p class="eyebrow">Practice</p>
-        <h2>社会实践</h2>
-      </div>
-      <div class="practice-grid">
-        <article
-          v-for="practice in resume.practices"
-          :key="practice.title"
-          class="practice-card"
-        >
-          <img
-            :src="asset(practice.image.src)"
-            :alt="practice.image.alt"
-            loading="lazy"
-          />
-          <div class="practice-card-copy">
-            <p class="timeline-date">{{ practice.date }}</p>
-            <h3>{{ practice.title }}</h3>
-            <p class="timeline-role">{{ practice.role }}</p>
-            <p class="timeline-copy">{{ practice.result }}</p>
-            <ul class="clean-list compact-list">
-              <li v-for="point in practice.points" :key="point">{{ point }}</li>
-            </ul>
-            <p class="practice-caption">{{ practice.image.caption }}</p>
-          </div>
-        </article>
-      </div>
-    </section>
   </main>
 </template>
 
@@ -158,10 +123,6 @@
 import { onMounted } from 'vue'
 import { resume } from '../data/portfolio'
 import { runPageMotion } from '../animations'
-
-function asset(src: string): string {
-  return `${import.meta.env.BASE_URL}${src}`
-}
 
 onMounted(() => runPageMotion())
 </script>
