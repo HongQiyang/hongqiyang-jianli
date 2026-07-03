@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>正在返回作品集</title>
+    <script>
+      ;(function () {
+        var base = '/hongqiyang-jianli/'
+        var path = window.location.pathname
+        var route = path.indexOf(base) === 0 ? path.slice(base.length) : path.replace(/^\/+/, '')
+        window.sessionStorage.setItem(
+          'spa-redirect',
+          '/' + route + window.location.search + window.location.hash
+        )
+        window.location.replace(base)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>

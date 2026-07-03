@@ -9,3 +9,10 @@ router.afterEach(() => {
 })
 
 createApp(App).use(router).mount('#app')
+
+const redirectedRoute = window.sessionStorage.getItem('spa-redirect')
+
+if (redirectedRoute) {
+  window.sessionStorage.removeItem('spa-redirect')
+  router.replace(redirectedRoute)
+}
