@@ -103,14 +103,17 @@ export const profile = {
   subtitle: 'Ocean Acoustics · Biomimetic Robotics · Underwater Systems',
   intro: '突破水声通信技术，自主研制仿生机器人与水下探测系统，致力于深海领域的探索与开发',
   identity: '厦门大学 · 海洋技术（海洋物理方向）· 本科生',
-  metrics: ['GPA 3.80 / 4.00', '专业排名 3 / 30', 'CET-4 554 / CET-6 501'],
+  metrics: ['GPA 3.80 / 4.00', '专业排名 4 / 54', 'CET-4 554 / CET-6 501'],
   researchObjective:
-    '聚焦智能海洋装备与水声感知，期望在研究生阶段围绕水下声源定位、海洋声学观测与仿生机器人平台开展系统性研究。',
+    '聚焦智能海洋装备与水声感知，目前主要围绕水下声源定位、海洋声学观测与仿生机器人平台开展系统性研究与实践。',
   honors: [
-    '第十八届先进机器人及仿真技术大赛国赛一等奖',
-    '发明专利申请进入实质审查阶段',
-    '厦门大学海洋与地球学院第五届拔尖本科生学术论坛汇报二等奖',
-    '嘉庚号香港开放日志愿服务 Certificate of Appreciation'
+    '国家奖学金',
+    '厦门大学通报表扬',
+    '厦门大学校十佳共青团员',
+    '校优秀三好学生',
+    '厦门大学融润强海奖学金',
+    '两项第十八届先进机器人及仿真技术大赛国家级一等奖',
+    '一项第十八届先进机器人及仿真技术大赛国家级三等奖'
   ],
   about:
     '洪旗阳，本科就读于厦门大学海洋技术方向，项目兴趣集中在海洋声学、仿生机器人、水下通信与水下感知系统。曾就读于福建省厦门第一中学。'
@@ -196,9 +199,72 @@ export const resume = {
         '嘉庚号香港开放日志愿服务 Certificate of Appreciation',
         '嘉庚号公众开放日展览协助与科普志愿服务经历'
       ],
-      reports: haisiReports.filter((report) =>
-        ['人民网', '中国新闻网', '厦门日报', '厦门网'].includes(report.source)
-      ).slice(0, 4),
+      reports: [
+        {
+          category: '国家级媒体报道',
+          source: '央视网',
+          title: '嘉庚号香港开放日相关视频报道',
+          date: '2024年8月',
+          href: 'https://content-static.cctvnews.cctv.com/snow-book/video.html?item_id=9866189641359648862&t=1722685415155&toc_style_id=video_default&track_id=E74889B8-C399-44C2-89C9-6581D26490EE_744383168190',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        },
+        {
+          category: '国家级媒体报道',
+          source: '中国新闻网',
+          title: '嘉庚号香港开放日相关报道',
+          date: '2024年8月3日',
+          href: 'https://m.chinanews.com/wap/detail/zw/gj/2024/08-03/10262756.shtml',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        },
+        {
+          category: '国家级媒体报道',
+          source: '中国教育电视台',
+          title: '嘉庚号香港开放日相关报道',
+          date: '2024年8月',
+          href: 'http://m.cetv.cn/p/517612.htm',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        },
+        {
+          category: '国家级媒体报道',
+          source: '央广网',
+          title: '嘉庚号香港开放日相关报道',
+          date: '2024年8月',
+          href: 'https://apicnrapp.cnr.cn/html/share.html?id=29341506',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        },
+        {
+          category: '校级转载报道',
+          source: '央广网客户端',
+          title: '嘉庚号香港开放日相关报道',
+          date: '2024年8月',
+          href: 'https://news.xmu.edu.cn/info/1024/476581.htm',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        },
+        {
+          category: '校级转载报道',
+          source: '央广网',
+          title: '嘉庚号香港开放日相关报道',
+          date: '2024年8月',
+          href: 'https://news.xmu.edu.cn/info/1024/479361.htm',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        },
+        {
+          category: '国家级媒体报道',
+          source: '新华网',
+          title: '嘉庚号香港开放日相关报道',
+          date: '2024年9月6日',
+          href: 'http://fj.news.cn/20240906/0532e4af8e374e47a3605d4c8e3a69c4/c.html',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        },
+        {
+          category: '国家级媒体报道',
+          source: '中国网',
+          title: '嘉庚号香港开放日相关报道',
+          date: '2024年8月13日',
+          href: 'http://dicn.china.com.cn/web/zfzx/detail2_2024_08/13/4446277.html',
+          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+        }
+      ],
       image: {
         kind: 'image',
         src: 'assets/practice/kageng-open-day-certificate.png',

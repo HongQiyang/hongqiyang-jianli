@@ -56,15 +56,20 @@ describe('HomeView hero', () => {
     expect(wrapper.find('.profile-overview').exists()).toBe(true)
     expect(text).toContain('厦门大学 · 海洋技术（海洋物理方向）· 本科生')
     expect(text).toContain('GPA 3.80 / 4.00')
-    expect(text).toContain('专业排名 3 / 30')
+    expect(text).toContain('专业排名 4 / 54')
     expect(text).toContain('CET-4 554 / CET-6 501')
-    expect(text).toContain('研究目标')
-    expect(text).toContain('聚焦智能海洋装备与水声感知')
+    expect(text).toContain('科研方向')
+    expect(text).toContain(
+      '聚焦智能海洋装备与水声感知，目前主要围绕水下声源定位、海洋声学观测与仿生机器人平台开展系统性研究与实践。'
+    )
     expect(text).toContain('代表荣誉')
-    expect(text).toContain('第十八届先进机器人及仿真技术大赛国赛一等奖')
-    expect(text).toContain('发明专利申请进入实质审查阶段')
-    expect(text).toContain('拔尖本科生学术论坛汇报二等奖')
-    expect(text).toContain('嘉庚号香港开放日志愿服务 Certificate of Appreciation')
+    expect(text).toContain('国家奖学金')
+    expect(text).toContain('厦门大学通报表扬')
+    expect(text).toContain('厦门大学校十佳共青团员')
+    expect(text).toContain('校优秀三好学生')
+    expect(text).toContain('厦门大学融润强海奖学金')
+    expect(text).toContain('两项第十八届先进机器人及仿真技术大赛国家级一等奖')
+    expect(text).toContain('一项第十八届先进机器人及仿真技术大赛国家级三等奖')
   })
 
   it('uses the stronger opening statement and leaves email to the contact page', () => {

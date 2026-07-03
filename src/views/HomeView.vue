@@ -21,7 +21,7 @@
           <span v-for="metric in profile.metrics" :key="metric">{{ metric }}</span>
         </div>
         <p class="profile-objective">
-          <strong>研究目标</strong>
+          <strong>科研方向</strong>
           {{ profile.researchObjective }}
         </p>
       </div>
