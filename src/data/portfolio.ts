@@ -17,7 +17,7 @@ export type ReportLink = {
 }
 
 export type Project = {
-  slug: 'mudskipper' | 'tuna' | 'haisi'
+  slug: 'mudskipper' | 'tuna' | 'haisi' | 'dolphin'
   href: string
   title: string
   status: ProjectStatus
@@ -36,40 +36,52 @@ export type Project = {
   reports?: ReportLink[]
 }
 
-const haisiReports: ReportLink[] = [
-  {
-    category: '国家级权威媒体报道',
-    source: '新华网',
-    title: '“嘉庚”号科考船再启航将首次穿越赤道',
-    date: '2025年7月24日',
-    href: 'http://fj.news.cn/20250724/dbe58acd441e4dceaddfa0c11641498c/c.html',
-    note: '突出第六届“海丝学堂”航次启航背景和首次穿越赤道的航次意义。'
-  },
-  {
-    category: '国家级权威媒体报道',
-    source: '人民网',
-    title: '厦门大学“嘉庚”号科考船在雅加达举办公众开放日活动',
-    date: '2025年8月9日',
-    href: 'https://world.people.com.cn/n1/2025/0809/c1002-40539246.html',
-    note: '用于体现航次中的科普教育、国际交流和公众开放日活动。'
-  },
-  {
-    category: '厦门大学官方报道',
-    source: '厦门大学海洋与地球学院',
-    title: '承嘉庚初心连海丝情谊拓蓝色未来',
-    date: '2025年7月24日',
-    href: 'https://coe.xmu.edu.cn/info/3462/224251.htm',
-    note: '官方口径的活动综述，涵盖航次背景、目标与启航仪式。'
-  },
-  {
-    category: '厦门大学官方报道',
-    source: '厦门大学海洋与地球学院',
-    title: '2025年度“海丝学堂”航次成果汇报大会圆满落幕',
-    date: '2026年4月2日',
-    href: 'https://coe.xmu.edu.cn/info/2691/227581.htm',
-    note: '作为航次成果汇报和后续科研整理的官方佐证。'
-  }
-]
+type ResumeResearchProject = {
+  date: string
+  title: string
+  role: string
+  points: string[]
+}
+
+const haisiReportEntries = [
+  ['国家级权威媒体报道', '新华网', '“嘉庚”号科考船再启航将首次穿越赤道', '2025年7月24日', 'http://www.fj.xinhuanet.com/20250724/dbe58acd441e4dceaddfa0c11641498c/c.html'],
+  ['国家级权威媒体报道', '人民网', '厦门大学“嘉庚”号科考船在雅加达举办公众开放日活动', '2025年8月9日', 'https://world.people.com.cn/n1/2025/0809/c1002-40539246.html'],
+  ['国家级权威媒体报道', '新华网', '“嘉庚”号相关国际航次报道', '2025年8月8日', 'https://www.news.cn/world/20250808/7d9f96fb922d44ea869d32f323743fe0/c.html'],
+  ['国家级权威媒体报道', '中国新闻网', '“嘉庚”号相关国际航次报道', '2025年8月8日', 'https://www.chinanews.com.cn/gj/2025/08-08/10461819.shtml'],
+  ['国家级权威媒体报道', '亚太网', '“嘉庚”号相关亚太区域报道', '2025年8月12日', 'https://www.news.cn/asia/20250812/6a41fa7e65c946debfa32ba17c846ed2/c.html'],
+  ['国家级权威媒体报道', '中国新闻网', '“嘉庚”号相关视频报道', '2025年8月8日', 'https://www.chinanews.com.cn/gj/shipin/cns-d/2025/08-08/news1027149.shtml'],
+  ['省级媒体报道', '新福建', '第六届“海丝学堂”相关报道', '2025年7月25日', 'https://www.fjdaily.com/app/content/2025-07/25/content_3448223.html'],
+  ['省级媒体报道', '闽南网', '第六届“海丝学堂”相关报道', '2025年7月', 'http://www.mnw.cn/xiamen/news/3032131.html'],
+  ['省级媒体报道', '浙江日报', '“嘉庚”号相关报道', '2025年8月9日', 'https://zjrb.zjol.com.cn/html/2025-08/09/content_3842846.htm'],
+  ['省级媒体报道', '新福建', '“嘉庚”号雅加达公众开放日相关报道', '2025年8月9日', 'https://www.fjdaily.com/app/content/2025-08/09/content_3480620.html'],
+  ['市级媒体报道', '厦门广电网', '第六届“海丝学堂”相关报道', '2025年7月24日', 'https://www.xmtv.cn/xmtv/2025-07-24/5225601a85122a96.html'],
+  ['市级媒体报道', '厦门市集美区人民政府', '第六届“海丝学堂”相关报道', '2025年7月30日', 'https://www.jimei.gov.cn/ywkd/jmbxw/202507/t20250730_1110434.htm'],
+  ['市级媒体报道', '厦视新闻', '第六届“海丝学堂”相关报道', '2025年7月24日', 'https://www.xmtv.cn/xmtv/2025-07-24/1518fa064b6f0deb.html'],
+  ['市级媒体报道', '厦门网', '第六届“海丝学堂”相关报道', '2025年7月25日', 'https://news.xmnn.cn/xmxw/202507/t20250725_355881.html'],
+  ['市级媒体报道', '厦门日报', '第六届“海丝学堂”相关报道', '2025年7月25日', 'https://epaper.xmrb.com/xmrb/pc/con/202507/25/content_77269.html'],
+  ['市级媒体报道', '厦门广电网', '“嘉庚”号雅加达公众开放日相关报道', '2025年8月9日', 'https://www.xmtv.cn/xmtv/2025-08-09/0a4c287a5ba2d9b2.html'],
+  ['市级媒体报道', '厦门日报', '“嘉庚”号雅加达公众开放日相关报道', '2025年8月9日', 'https://epaper.xmrb.com/xmrb/pc/con/202508/09/content_78908.html'],
+  ['市级媒体报道', '厦门网', '“嘉庚”号雅加达公众开放日相关报道', '2025年8月9日', 'https://news.xmnn.cn/xmxw/202508/t20250809_358504.html'],
+  ['厦门大学官方报道', '厦门大学新闻网', '第六届“海丝学堂”相关报道', '2025年', 'https://news.xmu.edu.cn/info/1025/503042.htm'],
+  ['厦门大学官方报道', '厦门大学新闻网', '第六届“海丝学堂”相关报道', '2025年', 'https://news.xmu.edu.cn/info/1024/479361.htm'],
+  ['厦门大学官方报道', '厦门大学新闻网', '第六届“海丝学堂”相关报道', '2025年', 'https://news.xmu.edu.cn/info/1025/503052.htm'],
+  ['厦门大学官方报道', '厦门大学新闻网', '第六届“海丝学堂”相关报道', '2025年', 'https://news.xmu.edu.cn/info/1025/503722.htm'],
+  ['厦门大学官方报道', '厦门大学新闻网', '第六届“海丝学堂”相关报道', '2025年', 'https://news.xmu.edu.cn/info/1024/503752.htm'],
+  ['厦门大学官方报道', '厦门大学官方微信', '第六届“海丝学堂”相关报道', '2025年', 'https://mp.weixin.qq.com/s/ZvvvtJWwCfiUY3046s1Mpg'],
+  ['学院报道', '厦门大学海洋与地球学院', '第六届“海丝学堂”相关报道', '2025年', 'https://coe.xmu.edu.cn/info/1591/214261.htm'],
+  ['学院报道', '湛蓝风华', '第六届“海丝学堂”相关报道', '2025年', 'https://mp.weixin.qq.com/s/LZ_dRoAhw6Mnq0RhOrPCKw']
+] as const
+
+const haisiReports: ReportLink[] = haisiReportEntries.map(
+  ([category, source, title, date, href]) => ({
+    category,
+    source,
+    title,
+    date,
+    href,
+    note: '作为厦门大学第六届“海丝学堂”航次背景、公众开放、国际交流与成果传播的外部佐证。'
+  })
+)
 
 export const contact = {
   email: 'hongqiyang@stu.xmu.edu.cn'
@@ -129,17 +141,7 @@ export const resume = {
       detail: '围绕入学以来的科研项目脉络、阶段成果与后续计划进行交流汇报。'
     }
   ],
-  researchProjects: [
-    {
-      date: '2025 - 2026',
-      title: '仿生海豚机器人省级大创项目',
-      role: '电控运动模块负责人',
-      points: [
-        '围绕仿生海豚运动平台开展电控运动模块设计，支撑推进机构、运动控制与实验验证。',
-        '结合 Fluent/UDF 运动仿真材料，参与推进运动参数与机器人平台控制逻辑的协同整理。'
-      ]
-    }
-  ],
+  researchProjects: [] as ResumeResearchProject[],
   mediaReports: haisiReports,
   education: [
     {
@@ -239,15 +241,15 @@ export const projects: Project[] = [
     title: '适用于被动声学监测的金枪鱼仿生探测机器人',
     status: 'In Progress',
     summary:
-      '面向水下被动声学监测的进行中项目，已完成实验仿真验证，当前处于仿真到水池实验的衔接阶段，水池实验尚未进行。',
-    keywords: ['In Progress', '声源定位', 'K230', 'LSTM', '水下视觉'],
+      '本项目面向水下被动声学监测应用，已完成仿真实验与初步验证，当前正处于由仿真验证向水池实验过渡的阶段，后续将开展水池实验以进一步验证系统性能。',
+    keywords: ['校级大创', 'In Progress', '声源定位', 'K230', 'LSTM', '水下视觉'],
     heroImage: 'assets/projects/tuna/simulation-validation-hero.png',
     sections: [
       {
         eyebrow: 'Concept',
         title: '面向水下被动监测的仿生机器鱼平台',
         body:
-          '项目围绕金枪鱼仿生平台展开，目标是融合运动优化、端侧视觉识别、滤波电路板和声学探测定位，形成面向水下被动声学监测的移动式平台。'
+          '本项目为校级大学生创新创业训练项目，围绕金枪鱼仿生平台展开，目标是融合运动优化、端侧视觉识别、滤波电路板和声学探测定位，形成面向水下被动声学监测的移动式平台。'
       },
       {
         eyebrow: 'Progress',
@@ -280,6 +282,12 @@ export const projects: Project[] = [
         src: 'assets/projects/tuna/prototype-v1-enhanced.png',
         alt: '金枪鱼仿生探测机器人初代样机',
         caption: '初代样机：金枪鱼仿生鱼体、尾部推进结构与支撑架实物。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/tuna/rhc-7.png',
+        alt: 'RHC-7 柱形水听器技术参数',
+        caption: 'RHC-7 水听器：用于金枪鱼项目声学接收链路的传感器选型与参数参考。'
       }
     ]
   },
@@ -345,6 +353,50 @@ export const projects: Project[] = [
       }
     ],
     reports: haisiReports
+  },
+  {
+    slug: 'dolphin',
+    href: '/projects/dolphin',
+    title: '仿生海豚机器人省级大创项目',
+    status: 'In Progress',
+    summary:
+      '2025 - 2026 省级大学生创新创业训练项目，负责电控与运动控制模块，围绕水下仿生推进、声学感知与嵌入式控制链路开展平台集成。',
+    keywords: ['省级大创', 'Raspberry Pi', 'RSH-10', 'PWM 控制', '背腹式推进'],
+    heroImage: 'assets/projects/dolphin/rsh10.png',
+    sections: [
+      {
+        eyebrow: 'Control',
+        title: '分布式主控与高速水下通信',
+        body:
+          '以树莓派（Raspberry Pi）作为核心计算大脑，搭建底层 Linux 嵌入式控制系统；针对浅海复杂环境，设计并打通基于高可靠水下网线的有线远控链路，实现上位机与水下平台间控制指令与状态数据的低延迟、高带宽双向传输。'
+      },
+      {
+        eyebrow: 'Acoustics',
+        title: '水声感知与信号探测系统集成',
+        body:
+          '在机器人头部全密闭集成 RSH-10 水声传感器（水听器），作为水下主动感知“声眼”；负责微弱水声信号的捕获与硬件前置调理，打通从声学模拟信号捕获到 Raspberry Pi 数字信号处理的完整探测接收链路。'
+      },
+      {
+        eyebrow: 'Motion',
+        title: '仿生背腹式推进与舵机闭环控制',
+        body:
+          '基于生物动力学原理，主导尾部高扭矩舵机驱动系统的软硬件开发；编写定制化 PWM 控制算法，调制摆动频率与幅值，解决多连杆机构协调问题，实现背腹式上下纵向拍动的仿生推进形态。'
+      }
+    ],
+    flow: ['省级大创立项', 'Raspberry Pi 主控搭建', 'RSH-10 水声传感器集成', 'PWM 舵机控制', '多连杆推进调试', '水下平台联调'],
+    contribution: [
+      '担任电控与运动控制模块负责人，负责主控平台、远控链路和运动控制逻辑的整体设计。',
+      '完成 RSH-10 水听器前端接入思路与声学信号探测链路集成。',
+      '编写定制化 PWM 控制算法，围绕尾部高扭矩舵机和多连杆机构推进背腹式仿生运动。'
+    ],
+    evidence: [
+      {
+        kind: 'image',
+        src: 'assets/projects/dolphin/rsh10.png',
+        alt: '仿生海豚机器人 RSH-10 水声传感器材料',
+        caption: '水声感知模块：RSH-10 水声传感器作为机器人头部声学探测链路的核心输入。'
+      }
+    ]
   }
 ]
 

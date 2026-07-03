@@ -53,7 +53,7 @@
           </article>
         </section>
 
-        <section class="resume-section" data-reveal>
+        <section v-if="resume.researchProjects.length" class="resume-section" data-reveal>
           <p class="eyebrow">Research Project</p>
           <h2>大创项目</h2>
           <article

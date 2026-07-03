@@ -57,8 +57,39 @@ describe('ProjectView hero', () => {
 
     expect(wrapper.find('.report-section').exists()).toBe(true)
     expect(wrapper.text()).toContain('国家级权威媒体报道')
+    expect(wrapper.text()).toContain('省级媒体报道')
+    expect(wrapper.text()).toContain('市级媒体报道')
+    expect(wrapper.text()).toContain('学院报道')
     expect(wrapper.text()).toContain('新华网')
     expect(wrapper.text()).toContain('人民网')
-    expect(wrapper.findAll('.report-card')).toHaveLength(4)
+    expect(wrapper.text()).toContain('湛蓝风华')
+    expect(wrapper.findAll('.report-card')).toHaveLength(26)
+  })
+
+  it('shows the dolphin innovation project as a project detail page', async () => {
+    const router = createRouter({
+      history: createWebHistory('/hongqiyang-jianli/'),
+      routes: [{ path: '/projects/:slug', component: ProjectView }]
+    })
+
+    router.push('/projects/dolphin')
+    await router.isReady()
+
+    const wrapper = mount(ProjectView, {
+      global: {
+        plugins: [router],
+        stubs: {
+          RouterLink: {
+            props: ['to'],
+            template: '<a><slot /></a>'
+          }
+        }
+      }
+    })
+
+    expect(wrapper.find('h1').text()).toBe('仿生海豚机器人省级大创项目')
+    expect(wrapper.text()).toContain('Raspberry Pi')
+    expect(wrapper.text()).toContain('RSH-10')
+    expect(wrapper.text()).toContain('PWM 控制算法')
   })
 })
