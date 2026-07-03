@@ -2,6 +2,20 @@
 
 这是一个基于 Vue 3、Vite、TypeScript 与 GSAP 的个人主页 / 在线简历项目。
 
+## 访问地址
+
+线上地址：
+
+```text
+https://hongqiyang.github.io/hongqiyang-jianli/
+```
+
+本地调试地址：
+
+```text
+http://127.0.0.1:5173/hongqiyang-jianli/
+```
+
 ## 本地预览
 
 ```powershell
