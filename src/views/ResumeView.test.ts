@@ -8,11 +8,21 @@ vi.mock('../animations', () => ({
 
 describe('ResumeView', () => {
   it('shows research voyage, education, skills and English certificates', () => {
-    const wrapper = mount(ResumeView)
+    const wrapper = mount(ResumeView, {
+      global: {
+        stubs: {
+          RouterLink: {
+            props: ['to'],
+            template: '<a :data-to="to"><slot /></a>'
+          }
+        }
+      }
+    })
     const text = wrapper.text()
 
     expect(wrapper.find('h1').text()).toBe('在线简历')
     expect(text).toContain('海丝远洋科考经历')
+    expect(text).toContain('厦门大学第六届“海丝学堂”人才培养计划')
     expect(text).toContain('嘉庚号')
     expect(text).toContain('厦门大学（翔安校区）')
     expect(text).toContain('福建省厦门第一中学')
@@ -41,6 +51,7 @@ describe('ResumeView', () => {
     expect(text).toContain('海底火山现象模拟小实验')
     expect(text).not.toContain('仿生海豚机器人省级大创项目')
     expect(text).not.toContain('电控运动模块')
+    expect(wrapper.find('[data-to="/projects/haisi"]').exists()).toBe(true)
     expect(wrapper.find('.media-report-section').exists()).toBe(false)
     expect(wrapper.findAll('.timeline-report-list a')).toHaveLength(26)
   })

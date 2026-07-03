@@ -55,6 +55,7 @@ describe('ProjectView hero', () => {
       }
     })
 
+    expect(wrapper.find('h1').text()).toBe('厦门大学第六届“海丝学堂”航次与水声信道分析')
     expect(wrapper.find('.report-section').exists()).toBe(true)
     expect(wrapper.text()).toContain('国家级权威媒体报道')
     expect(wrapper.text()).toContain('省级媒体报道')

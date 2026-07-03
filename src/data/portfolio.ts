@@ -132,7 +132,8 @@ export const resume = {
   expeditions: [
     {
       date: '2025.07 - 2025.08',
-      title: '厦门大学“海丝学堂”人才培养计划',
+      title: '厦门大学第六届“海丝学堂”人才培养计划',
+      href: '/projects/haisi',
       role: '嘉庚号第二航段组员',
       points: [
         '参与从厦门启航至印度尼西亚雅加达的远洋科考航次，面向南海及太平洋南部深海垂直水声通信与信道特性开展学习和实验。',
@@ -334,7 +335,7 @@ export const projects: Project[] = [
   {
     slug: 'haisi',
     href: '/projects/haisi',
-    title: '海丝学堂航次与水声信道分析',
+    title: '厦门大学第六届“海丝学堂”航次与水声信道分析',
     status: 'Field Analysis',
     summary:
       '基于海上航次实验，围绕水声通信、环境噪声测量与频谱分析整理真实实验经历。',

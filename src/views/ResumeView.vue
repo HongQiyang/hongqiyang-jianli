@@ -17,7 +17,16 @@
             class="timeline-item"
           >
             <p class="timeline-date">{{ expedition.date }}</p>
-            <h3>{{ expedition.title }}</h3>
+            <h3>
+              <RouterLink
+                v-if="expedition.href"
+                class="timeline-title-link"
+                :to="expedition.href"
+              >
+                {{ expedition.title }}
+              </RouterLink>
+              <template v-else>{{ expedition.title }}</template>
+            </h3>
             <p class="timeline-role">{{ expedition.role }}</p>
             <ul class="clean-list compact-list">
               <li v-for="point in expedition.points" :key="point">{{ point }}</li>
