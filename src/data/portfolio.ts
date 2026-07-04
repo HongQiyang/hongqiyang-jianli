@@ -201,67 +201,43 @@ export const resume = {
       ],
       reports: [
         {
-          category: '国家级媒体报道',
-          source: '央视网',
-          title: '嘉庚号香港开放日相关视频报道',
-          date: '2024年8月',
-          href: 'https://content-static.cctvnews.cctv.com/snow-book/video.html?item_id=9866189641359648862&t=1722685415155&toc_style_id=video_default&track_id=E74889B8-C399-44C2-89C9-6581D26490EE_744383168190',
-          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+          category: '厦门大学官方报道',
+          source: '厦门大学海洋与地球学院',
+          title: '厦门大学“嘉庚”号科考船首次访港开展公众开放日活动',
+          date: '2024年8月22日',
+          href: 'https://coe.xmu.edu.cn/info/1591/124890.htm',
+          note: '作为嘉庚号首次访港、公众开放日与实践队志愿讲解经历的官方佐证。'
         },
         {
-          category: '国家级媒体报道',
-          source: '中国新闻网',
-          title: '嘉庚号香港开放日相关报道',
-          date: '2024年8月3日',
-          href: 'https://m.chinanews.com/wap/detail/zw/gj/2024/08-03/10262756.shtml',
-          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+          category: '嘉庚号官方报道',
+          source: '“嘉庚”号海洋科学综合考察船',
+          title: '闽都-嘉庚海上行——2024年“海丝学堂”暨“纪念陈嘉庚先生诞辰150周年”活动',
+          date: '2024年9月1日',
+          href: 'https://ships.xmu.edu.cn/info/1406/3327.htm',
+          note: '作为2024年海丝学堂及嘉庚号公众开放日活动脉络的官方佐证。'
         },
         {
-          category: '国家级媒体报道',
-          source: '中国教育电视台',
-          title: '嘉庚号香港开放日相关报道',
-          date: '2024年8月',
-          href: 'http://m.cetv.cn/p/517612.htm',
-          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+          category: '主办方报道',
+          source: '集友陈嘉庚教育基金',
+          title: '「嘉庚」号科考船访港活动圆满落幕 三大亮点引关注',
+          date: '2024年8月23日',
+          href: 'https://www.chiyutkkedf.org.hk/cn/%E3%80%8C%E5%98%89%E5%BA%9A%E3%80%8D%E5%8F%B7%E7%A7%91%E8%80%83%E8%88%B9%E8%AE%BF%E6%B8%AF%E6%B4%BB%E5%8A%A8%E5%9C%86%E6%BB%A1%E8%90%BD%E5%B9%95%E4%B8%89%E5%A4%A7%E4%BA%AE%E7%82%B9%E5%BC%95%E5%85%B3/',
+          note: '作为嘉庚号访港活动主办方对公众开放日、海丝学堂与科普交流的佐证。'
         },
         {
-          category: '国家级媒体报道',
-          source: '央广网',
-          title: '嘉庚号香港开放日相关报道',
-          date: '2024年8月',
-          href: 'https://apicnrapp.cnr.cn/html/share.html?id=29341506',
-          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
+          category: '媒体报道',
+          source: '紫荆号',
+          title: '厦门大学海洋科考船「嘉庚」号访港暨「纪念陈嘉庚先生诞辰150周年专题展览」开幕礼',
+          date: '2024年8月16日',
+          href: 'https://bau.com.hk/article/2024-08/16/content_1274118532838510592.html',
+          note: '作为嘉庚号访港开幕礼与专题展览的媒体报道佐证。'
         },
         {
-          category: '校级转载报道',
-          source: '央广网客户端',
-          title: '嘉庚号香港开放日相关报道',
-          date: '2024年8月',
-          href: 'https://news.xmu.edu.cn/info/1024/476581.htm',
-          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
-        },
-        {
-          category: '校级转载报道',
-          source: '央广网',
-          title: '嘉庚号香港开放日相关报道',
-          date: '2024年8月',
-          href: 'https://news.xmu.edu.cn/info/1024/479361.htm',
-          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
-        },
-        {
-          category: '国家级媒体报道',
-          source: '新华网',
-          title: '嘉庚号香港开放日相关报道',
-          date: '2024年9月6日',
-          href: 'http://fj.news.cn/20240906/0532e4af8e374e47a3605d4c8e3a69c4/c.html',
-          note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
-        },
-        {
-          category: '国家级媒体报道',
-          source: '中国网',
-          title: '嘉庚号香港开放日相关报道',
-          date: '2024年8月13日',
-          href: 'http://dicn.china.com.cn/web/zfzx/detail2_2024_08/13/4446277.html',
+          category: '媒体报道',
+          source: '点新闻',
+          title: '陈嘉庚诞辰150周年「嘉庚」号访港开幕礼今举办',
+          date: '2024年8月16日',
+          href: 'https://www.dotdotnews.com/a/202408/16/AP66bf3b1ae4b0d492760b82e2.html',
           note: '作为嘉庚号香港开放日志愿服务与公众科普场景的媒体佐证。'
         }
       ],
@@ -537,6 +513,12 @@ export const projects: Project[] = [
       '编写定制化 PWM 控制算法，围绕尾部高扭矩舵机和多连杆机构推进背腹式仿生运动。'
     ],
     evidence: [
+      {
+        kind: 'image',
+        src: 'assets/projects/dolphin/dolphin-back-ventral-prototype.jpg',
+        alt: '一种基于背腹式运动模式的仿生机械海豚设计样机',
+        caption: '一种基于背腹式运动模式的仿生机械海豚设计：展示多节躯干、尾部执行机构与背腹式推进结构的样机形态。'
+      },
       {
         kind: 'image',
         src: 'assets/projects/dolphin/rsh10.png',
