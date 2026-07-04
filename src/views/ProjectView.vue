@@ -25,20 +25,21 @@
         class="glass-block project-section-card"
         data-reveal
       >
-        <svg
-          class="section-card-icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            :d="sectionIconPath(section.eyebrow)"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        <div class="section-card-icon-wrap" aria-hidden="true">
+          <svg
+            class="section-card-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              :d="sectionIconPath(section.eyebrow)"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
         <p class="eyebrow">{{ section.eyebrow }}</p>
         <h2>{{ section.title }}</h2>
         <p>{{ section.body }}</p>

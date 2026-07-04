@@ -46,14 +46,16 @@ describe('portfolio content', () => {
     expect(tuna?.flow).toContain('初代样机制作')
   })
 
-  it('uses only the public video as mudskipper detail evidence', () => {
+  it('uses public video and structure comparison image as mudskipper detail evidence', () => {
     const mudskipper = projects.find((project) => project.slug === 'mudskipper')
 
-    expect(mudskipper?.evidence).toHaveLength(1)
-    expect(mudskipper?.evidence[0]).toMatchObject({
-      kind: 'video',
-      src: 'assets/projects/mudskipper/demo.mp4'
-    })
+    expect(mudskipper?.evidence.map((item) => item.src)).toEqual([
+      'assets/projects/mudskipper/demo.mp4',
+      'assets/projects/mudskipper/prototype-structure-overview.png'
+    ])
+    expect(mudskipper?.evidence.map((item) => item.caption).join(' ')).toContain(
+      '实物样机与结构标注'
+    )
   })
 
   it('uses the selected technical diagrams as project hero images', () => {
@@ -120,7 +122,7 @@ describe('portfolio content', () => {
   it('attaches patent and award proofs to the mudskipper project', () => {
     const mudskipper = projects.find((project) => project.slug === 'mudskipper')
 
-    expect(mudskipper?.evidence).toHaveLength(1)
+    expect(mudskipper?.evidence).toHaveLength(2)
     expect(mudskipper?.proofs?.map((item) => item.src)).toEqual([
       'assets/projects/mudskipper/patent-substantive-exam.png',
       'assets/projects/mudskipper/robot-competition-award.png'

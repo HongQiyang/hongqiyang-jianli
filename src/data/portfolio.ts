@@ -341,6 +341,13 @@ export const projects: Project[] = [
         src: 'assets/projects/mudskipper/demo.mp4',
         alt: '弹涂鱼机器人公开视频',
         caption: '项目视频：弹涂鱼机器人相关实验与展示片段。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/prototype-structure-overview.png',
+        alt: '弹涂鱼机器人实物与结构标注对照',
+        caption:
+          '弹涂鱼机器人实物与结构标注对照：实物样机与结构标注展示弹涂鱼仿生机器人平台的外形样机、尾鳍推进结构、胸鳍支撑、水声换能器与防水摄像头等关键模块。'
       }
     ],
     proofs: [
