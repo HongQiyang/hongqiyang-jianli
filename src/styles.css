@@ -1419,6 +1419,10 @@ h2 {
   gap: 16px;
 }
 
+.project-section-grid {
+  gap: 24px;
+}
+
 .glass-block,
 .about-card,
 .evidence-card {
@@ -1435,13 +1439,63 @@ h2 {
   padding: 24px;
 }
 
+.project-section-card {
+  min-height: 288px;
+  border-color: rgba(148, 163, 184, 0.28);
+  border-radius: 16px;
+  padding: 30px;
+  background:
+    linear-gradient(180deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.86)),
+    rgba(15, 23, 42, 0.92);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    background 300ms ease;
+}
+
+.project-section-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.5);
+  background:
+    linear-gradient(180deg, rgba(30, 64, 82, 0.9), rgba(15, 23, 42, 0.88)),
+    rgba(15, 23, 42, 0.92);
+  box-shadow:
+    0 26px 80px rgba(0, 0, 0, 0.26),
+    0 0 0 1px rgba(34, 211, 238, 0.12);
+}
+
+.section-card-icon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 18px;
+  color: var(--accent);
+  filter: drop-shadow(0 0 16px rgba(96, 241, 232, 0.22));
+}
+
 .glass-block h2 {
   font-size: 24px;
+}
+
+.project-section-card h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(21px, 2.4vw, 26px);
+  line-height: 1.24;
 }
 
 .glass-block p:not(.eyebrow) {
   margin: 16px 0 0;
   color: var(--muted);
+}
+
+.project-section-card p:not(.eyebrow) {
+  margin-top: 18px;
+  color: rgba(203, 213, 225, 0.86);
+  font-size: 15px;
+  font-weight: 720;
+  line-height: 1.9;
 }
 
 .split-section {

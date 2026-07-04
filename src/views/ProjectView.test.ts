@@ -32,6 +32,14 @@ describe('ProjectView hero', () => {
     const title = wrapper.find('h1')
     expect(title.classes()).toContain('project-hero-title')
     expect(title.text()).toBe('面向仿生水声隐蔽通信的弹涂鱼机器人')
+    expect(wrapper.findAll('.project-section-card')).toHaveLength(3)
+    expect(wrapper.findAll('.section-card-icon')).toHaveLength(3)
+    expect(wrapper.text()).toContain('仿生移动通信节点')
+    expect(wrapper.text()).toContain('平台与水声链路一体化')
+    expect(wrapper.text()).toContain('全流程实验与海试验证')
+    expect(wrapper.text()).toContain('突破传统水声通信节点布放后难以主动调整位置与姿态的局限')
+    expect(wrapper.text()).toContain('核心专利及算法细节均已脱敏处理')
+    expect(wrapper.text()).not.toContain('从固定通信节点到可移动仿生载体')
   })
 
   it('shows media and official report links for the haisi voyage project', async () => {

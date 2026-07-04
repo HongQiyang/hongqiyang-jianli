@@ -18,8 +18,27 @@
       />
     </section>
 
-    <section class="content-grid section-pad">
-      <article v-for="section in project.sections" :key="section.title" class="glass-block" data-reveal>
+    <section class="content-grid project-section-grid section-pad">
+      <article
+        v-for="section in project.sections"
+        :key="section.title"
+        class="glass-block project-section-card"
+        data-reveal
+      >
+        <svg
+          class="section-card-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            :d="sectionIconPath(section.eyebrow)"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
         <p class="eyebrow">{{ section.eyebrow }}</p>
         <h2>{{ section.title }}</h2>
         <p>{{ section.body }}</p>
@@ -142,6 +161,20 @@ const evidenceTitle = computed(() => {
 
 function asset(src: string): string {
   return `${import.meta.env.BASE_URL}${src}`
+}
+
+function sectionIconPath(eyebrow: string): string {
+  const key = eyebrow.toLowerCase()
+
+  if (key.includes('system') || key.includes('modules') || key.includes('control')) {
+    return 'M4 7h4l2 10h4l2-10h4 M7 12h10 M12 4v3 M12 17v3'
+  }
+
+  if (key.includes('validation') || key.includes('progress') || key.includes('evidence')) {
+    return 'M4 13l4 4L20 5 M5 20h14 M7 4h10'
+  }
+
+  return 'M5 12c2-5 5-8 7-8s5 3 7 8c-2 5-5 8-7 8s-5-3-7-8Z M9 12h6 M12 9v6'
 }
 
 onMounted(() => runPageMotion())
