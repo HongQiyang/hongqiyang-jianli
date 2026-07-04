@@ -492,7 +492,7 @@ export const projects: Project[] = [
     summary:
       '2025 - 2026 省级大学生创新创业训练项目，负责电控与运动控制模块，围绕水下仿生推进、声学感知与嵌入式控制链路开展平台集成。',
     keywords: ['省级大创', 'Raspberry Pi', 'RSH-10', 'PWM 控制', '背腹式推进'],
-    heroImage: 'assets/projects/dolphin/rsh10.png',
+    heroImage: 'assets/projects/dolphin/dolphin-back-ventral-prototype.jpg',
     sections: [
       {
         eyebrow: 'Control',

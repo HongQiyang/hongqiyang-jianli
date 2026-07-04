@@ -66,6 +66,9 @@ describe('portfolio content', () => {
     expect(mudskipper?.heroImage).toBe('assets/projects/mudskipper/structure-comparison.png')
     expect(tuna?.heroImage).toBe('assets/projects/tuna/simulation-validation-hero.png')
     expect(haisi?.heroImage).toBe('assets/projects/haisi/voyage-hero.jpg')
+    expect(projects.find((project) => project.slug === 'dolphin')?.heroImage).toBe(
+      'assets/projects/dolphin/dolphin-back-ventral-prototype.jpg'
+    )
   })
 
   it('uses the selected voyage proof images as haisi evidence', () => {
