@@ -16,6 +16,10 @@ https://hongqiyang.github.io/hongqiyang-jianli/
 http://127.0.0.1:5173/hongqiyang-jianli/
 ```
 
+访问二维码：
+
+![GitHub Pages 二维码](public/github-pages-qr.png)
+
 ## 本地预览
 
 ```powershell
