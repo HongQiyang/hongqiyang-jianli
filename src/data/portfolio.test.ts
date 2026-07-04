@@ -131,7 +131,7 @@ describe('portfolio content', () => {
     const dolphin = projects.find((project) => project.slug === 'dolphin')
 
     expect(resume.researchProjects).toHaveLength(0)
-    expect(dolphin?.title).toBe('仿生海豚机器人省级大创项目')
+    expect(dolphin?.title).toBe('一种基于背腹式运动模式的仿生机械海豚设计')
     expect(dolphin?.summary).toContain('电控与运动控制模块')
     expect(dolphin?.sections.map((section) => section.body).join(' ')).toContain('Raspberry Pi')
     expect(dolphin?.sections.map((section) => section.body).join(' ')).toContain('RSH-10')

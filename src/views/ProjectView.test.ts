@@ -88,7 +88,7 @@ describe('ProjectView hero', () => {
       }
     })
 
-    expect(wrapper.find('h1').text()).toBe('仿生海豚机器人省级大创项目')
+    expect(wrapper.find('h1').text()).toBe('一种基于背腹式运动模式的仿生机械海豚设计')
     expect(wrapper.text()).toContain('Raspberry Pi')
     expect(wrapper.text()).toContain('RSH-10')
     expect(wrapper.text()).toContain('PWM 控制算法')

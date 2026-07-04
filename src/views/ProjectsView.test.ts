@@ -24,7 +24,7 @@ describe('ProjectsView', () => {
     expect(wrapper.text()).toContain('面向仿生水声隐蔽通信的弹涂鱼机器人')
     expect(wrapper.text()).toContain('适用于被动声学监测的金枪鱼仿生探测机器人')
     expect(wrapper.text()).toContain('厦门大学第六届“海丝学堂”航次与水声信道分析')
-    expect(wrapper.text()).toContain('仿生海豚机器人省级大创项目')
+    expect(wrapper.text()).toContain('一种基于背腹式运动模式的仿生机械海豚设计')
   })
 
   it('uses the updated engineering landing statement', () => {

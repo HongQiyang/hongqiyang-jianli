@@ -480,7 +480,7 @@ export const projects: Project[] = [
   {
     slug: 'dolphin',
     href: '/projects/dolphin',
-    title: '仿生海豚机器人省级大创项目',
+    title: '一种基于背腹式运动模式的仿生机械海豚设计',
     status: 'In Progress',
     summary:
       '2025 - 2026 省级大学生创新创业训练项目，负责电控与运动控制模块，围绕水下仿生推进、声学感知与嵌入式控制链路开展平台集成。',
