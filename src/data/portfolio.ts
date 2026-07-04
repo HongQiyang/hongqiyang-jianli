@@ -432,22 +432,22 @@ export const projects: Project[] = [
     heroImage: 'assets/projects/haisi/voyage-hero.jpg',
     sections: [
       {
-        eyebrow: 'Field Work',
-        title: '真实航次中的水声通信实验',
+        eyebrow: 'FIELD WORK',
+        title: '真实航次实验',
         body:
-          '海丝学堂专业实习围绕水声语音通信、文字与图像传输、海洋环境噪声测量展开，为理解深海垂直信道和海洋声学环境提供了真实数据背景。'
+          '参与嘉庚号航次水声通信测试与环境噪声观测，完成海上实验数据采集与现场记录。'
       },
       {
-        eyebrow: 'Methods',
-        title: 'OFDM、DSSS 与环境噪声分析',
+        eyebrow: 'METHODS',
+        title: '信号处理方法',
         body:
-          '报告材料涉及 OFDM、DSSS、水声图像通信、Welch 功率谱估计和 1/3 倍频程分析，可作为项目页中方法和实验流程的主要依据。'
+          '围绕 OFDM、DSSS 与水声图像通信，开展频谱分析、功率谱估计和噪声特征提取。'
       },
       {
-        eyebrow: 'Evidence',
-        title: '波形、频谱与航次现场材料',
+        eyebrow: 'EVIDENCE',
+        title: '实验支撑材料',
         body:
-          '项目页将以波形图、频谱图、航次现场图作为证据，让读者看到这是来自真实海上实验和数据处理的经历。'
+          '通过波形、频谱、航次照片与实验记录，呈现项目从现场采集到数据分析的完整链路。'
       }
     ],
     flow: ['航次实验', '水声语音通信', '文字与图像传输', '环境噪声采集', '频谱与信道分析'],

@@ -74,6 +74,23 @@ describe('portfolio content', () => {
   it('uses the selected voyage proof images as haisi evidence', () => {
     const haisi = projects.find((project) => project.slug === 'haisi')
 
+    expect(haisi?.sections).toEqual([
+      {
+        eyebrow: 'FIELD WORK',
+        title: '真实航次实验',
+        body: '参与嘉庚号航次水声通信测试与环境噪声观测，完成海上实验数据采集与现场记录。'
+      },
+      {
+        eyebrow: 'METHODS',
+        title: '信号处理方法',
+        body: '围绕 OFDM、DSSS 与水声图像通信，开展频谱分析、功率谱估计和噪声特征提取。'
+      },
+      {
+        eyebrow: 'EVIDENCE',
+        title: '实验支撑材料',
+        body: '通过波形、频谱、航次照片与实验记录，呈现项目从现场采集到数据分析的完整链路。'
+      }
+    ])
     expect(haisi?.evidence.map((item) => item.src)).toEqual([
       'assets/projects/haisi/participation-proof.png',
       'assets/projects/haisi/receiver-array.png',
