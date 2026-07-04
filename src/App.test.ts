@@ -30,6 +30,10 @@ describe('App background', () => {
     expect(wrapper.findAll('.bio-robot')).toHaveLength(3)
     expect(wrapper.find('.sonar-interface').exists()).toBe(true)
     expect(wrapper.find('.system-topology').exists()).toBe(true)
+    expect(wrapper.findAll('.sun-shaft')).toHaveLength(3)
+    expect(wrapper.find('.frequency-grid').exists()).toBe(true)
+    expect(wrapper.find('.acoustic-microphone').exists()).toBe(true)
+    expect(wrapper.findAll('.sound-curve')).toHaveLength(3)
   })
 })
 

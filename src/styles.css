@@ -63,21 +63,20 @@ video {
   z-index: -2;
   overflow: hidden;
   background:
-    radial-gradient(circle at 84% 72%, rgba(243, 206, 122, 0.2), transparent 18%),
-    radial-gradient(circle at 73% 16%, rgba(23, 214, 236, 0.58), transparent 30%),
-    radial-gradient(circle at 12% 82%, rgba(54, 211, 153, 0.24), transparent 25%),
-    radial-gradient(circle at 18% 18%, rgba(55, 122, 238, 0.56), transparent 35%),
-    linear-gradient(135deg, #041128 0%, #083052 47%, #075a68 100%);
+    radial-gradient(circle at 72% 10%, rgba(55, 225, 255, 0.58), transparent 28%),
+    radial-gradient(circle at 16% 82%, rgba(42, 198, 155, 0.34), transparent 28%),
+    radial-gradient(circle at 88% 64%, rgba(128, 246, 255, 0.28), transparent 22%),
+    linear-gradient(135deg, #052415 0%, #06473d 42%, #087a88 72%, #16b8d8 100%);
 }
 
 .ocean-backdrop::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.2;
+  opacity: 0.26;
   background-image:
-    linear-gradient(115deg, transparent 0 44%, rgba(96, 241, 232, 0.14) 45%, transparent 47%),
-    linear-gradient(70deg, transparent 0 62%, rgba(243, 206, 122, 0.1) 63%, transparent 65%);
+    linear-gradient(115deg, transparent 0 44%, rgba(134, 255, 244, 0.16) 45%, transparent 47%),
+    linear-gradient(70deg, transparent 0 62%, rgba(185, 245, 255, 0.12) 63%, transparent 65%);
   background-size: 780px 360px, 620px 420px;
   background-position: 6% 12%, 82% 70%;
 }
@@ -87,8 +86,46 @@ video {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(2, 7, 18, 0.76), rgba(2, 7, 18, 0.25) 54%, rgba(2, 7, 18, 0.58)),
-    radial-gradient(circle at 58% 46%, rgba(255, 255, 255, 0.16), transparent 25%);
+    linear-gradient(90deg, rgba(1, 20, 18, 0.62), rgba(3, 45, 52, 0.16) 54%, rgba(1, 20, 24, 0.34)),
+    radial-gradient(circle at 58% 38%, rgba(214, 255, 245, 0.22), transparent 27%);
+}
+
+.sun-shafts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.54;
+  filter: blur(0.4px);
+}
+
+.sun-shaft {
+  position: absolute;
+  top: -18vh;
+  width: 16vw;
+  height: 118vh;
+  background: linear-gradient(180deg, rgba(231, 255, 243, 0.28), rgba(96, 241, 232, 0.07) 46%, transparent 82%);
+  transform: rotate(15deg);
+  transform-origin: top center;
+  mask-image: linear-gradient(180deg, black, transparent 86%);
+  animation: sun-shaft-drift 18s ease-in-out infinite alternate;
+}
+
+.sun-shaft:nth-child(1) {
+  left: 14%;
+}
+
+.sun-shaft:nth-child(2) {
+  left: 42%;
+  width: 20vw;
+  opacity: 0.82;
+  animation-delay: -6s;
+}
+
+.sun-shaft:nth-child(3) {
+  right: 10%;
+  width: 13vw;
+  opacity: 0.72;
+  animation-delay: -11s;
 }
 
 .grid-layer {
@@ -187,6 +224,47 @@ video {
   transform: rotate(7deg);
   opacity: 0.22;
   animation-delay: -6s;
+}
+
+.sound-curves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.sound-curve {
+  position: absolute;
+  width: 44vw;
+  height: 150px;
+  border-top: 1px solid rgba(177, 255, 247, 0.34);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 16px rgba(96, 241, 232, 0.16));
+  animation: sound-curve-flow 16s ease-in-out infinite alternate;
+}
+
+.curve-a {
+  top: 23%;
+  right: 4%;
+  transform: rotate(-11deg);
+}
+
+.curve-b {
+  top: 38%;
+  right: 16%;
+  width: 34vw;
+  border-color: rgba(243, 206, 122, 0.22);
+  transform: rotate(-7deg);
+  animation-delay: -5s;
+}
+
+.curve-c {
+  bottom: 13%;
+  left: 6%;
+  width: 36vw;
+  transform: rotate(8deg);
+  opacity: 0.72;
+  animation-delay: -10s;
 }
 
 .sonar-arc {
@@ -315,14 +393,110 @@ video {
   top: 13%;
   width: min(390px, 30vw);
   aspect-ratio: 1.45;
-  opacity: 0.42;
+  opacity: 0.56;
   background:
-    radial-gradient(circle at 50% 55%, transparent 0 18%, rgba(96, 241, 232, 0.18) 19% 20%, transparent 21% 34%, rgba(96, 241, 232, 0.16) 35% 36%, transparent 37% 52%, rgba(96, 241, 232, 0.14) 53% 54%, transparent 55%),
-    conic-gradient(from 8deg at 50% 55%, rgba(116, 255, 244, 0.4) 0 34deg, transparent 35deg 360deg),
-    linear-gradient(rgba(189, 235, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(189, 235, 255, 0.08) 1px, transparent 1px);
+    radial-gradient(circle at 50% 55%, transparent 0 18%, rgba(118, 255, 244, 0.26) 19% 20%, transparent 21% 34%, rgba(118, 255, 244, 0.22) 35% 36%, transparent 37% 52%, rgba(118, 255, 244, 0.18) 53% 54%, transparent 55%),
+    conic-gradient(from 8deg at 50% 55%, rgba(116, 255, 244, 0.55) 0 34deg, transparent 35deg 360deg),
+    linear-gradient(rgba(189, 235, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(189, 235, 255, 0.11) 1px, transparent 1px);
   background-size: auto, auto, 42px 42px, 42px 42px;
   animation: sonar-screen 12s ease-in-out infinite alternate;
+}
+
+.frequency-grid {
+  position: absolute;
+  right: 4vw;
+  top: 38%;
+  width: min(330px, 26vw);
+  height: 190px;
+  border: 1px solid rgba(189, 235, 255, 0.16);
+  background:
+    linear-gradient(rgba(189, 235, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(189, 235, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(4, 14, 28, 0.18), rgba(4, 14, 28, 0.04));
+  background-size: 100% 38px, 48px 100%, auto;
+  opacity: 0.34;
+  box-shadow: 0 0 36px rgba(96, 241, 232, 0.1);
+}
+
+.frequency-grid span {
+  position: absolute;
+  right: 18px;
+  top: 16px;
+  color: rgba(243, 206, 122, 0.74);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.frequency-grid i {
+  position: absolute;
+  left: 28px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(96, 241, 232, 0.14), rgba(243, 206, 122, 0.32), transparent);
+  transform-origin: left center;
+}
+
+.frequency-grid i:nth-child(2) {
+  top: 112px;
+  transform: rotate(-8deg);
+}
+
+.frequency-grid i:nth-child(3) {
+  top: 130px;
+  transform: rotate(10deg);
+}
+
+.frequency-grid i:nth-child(4) {
+  top: 148px;
+  transform: rotate(-3deg);
+}
+
+.acoustic-microphone {
+  position: absolute;
+  right: 9vw;
+  top: 68%;
+  width: 82px;
+  height: 116px;
+  opacity: 0.28;
+  transform: rotate(-18deg);
+  filter: drop-shadow(0 0 20px rgba(96, 241, 232, 0.18));
+}
+
+.acoustic-microphone::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 42px;
+  height: 66px;
+  border: 1px solid rgba(218, 250, 255, 0.58);
+  border-radius: 24px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 8px, rgba(96, 241, 232, 0.2) 9px 10px),
+    rgba(6, 26, 46, 0.34);
+}
+
+.acoustic-microphone::after {
+  content: "";
+  position: absolute;
+  left: 39px;
+  top: 66px;
+  width: 4px;
+  height: 42px;
+  background: rgba(218, 250, 255, 0.52);
+  box-shadow: -16px 42px 0 -1px rgba(218, 250, 255, 0.42), 16px 42px 0 -1px rgba(218, 250, 255, 0.42);
+}
+
+.acoustic-microphone span {
+  position: absolute;
+  left: 7px;
+  top: 42px;
+  width: 68px;
+  height: 44px;
+  border: 1px solid rgba(96, 241, 232, 0.42);
+  border-top: 0;
+  border-radius: 0 0 42px 42px;
 }
 
 .system-topology {
@@ -1791,6 +1965,17 @@ h2 {
   }
 }
 
+@keyframes sun-shaft-drift {
+  from {
+    translate: -18px 0;
+    opacity: 0.34;
+  }
+  to {
+    translate: 20px 18px;
+    opacity: 0.68;
+  }
+}
+
 @keyframes stream-shift {
   from {
     translate: -12% -12px;
@@ -1897,6 +2082,15 @@ h2 {
   }
 }
 
+@keyframes sound-curve-flow {
+  from {
+    translate: -8px -4px;
+  }
+  to {
+    translate: 18px 10px;
+  }
+}
+
 @keyframes sonar-breathe {
   0%,
   100% {
@@ -1944,7 +2138,9 @@ h2 {
 
   .robot-harbor,
   .sonar-interface,
-  .system-topology {
+  .system-topology,
+  .frequency-grid,
+  .acoustic-microphone {
     opacity: 0.18;
   }
 
@@ -2089,7 +2285,8 @@ h2 {
   }
 
   .sonar-interface,
-  .system-topology {
+  .system-topology,
+  .frequency-grid {
     right: -18vw;
     width: 76vw;
   }

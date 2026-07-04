@@ -2,11 +2,21 @@
   <div class="app-shell">
     <div class="ocean-backdrop" aria-hidden="true">
       <div class="grid-layer"></div>
+      <div class="sun-shafts">
+        <span class="sun-shaft"></span>
+        <span class="sun-shaft"></span>
+        <span class="sun-shaft"></span>
+      </div>
       <div class="light-stream stream-a"></div>
       <div class="light-stream stream-b"></div>
       <div class="ethereal-veil"></div>
       <div class="signal-thread thread-a"></div>
       <div class="signal-thread thread-b"></div>
+      <div class="sound-curves">
+        <span class="sound-curve curve-a"></span>
+        <span class="sound-curve curve-b"></span>
+        <span class="sound-curve curve-c"></span>
+      </div>
       <div class="wave-ribbon wave-a"></div>
       <div class="wave-ribbon wave-b"></div>
       <div class="sonar-arc"></div>
@@ -23,6 +33,15 @@
         </div>
       </div>
       <div class="sonar-interface"></div>
+      <div class="frequency-grid">
+        <span>dB</span>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+      <div class="acoustic-microphone">
+        <span></span>
+      </div>
       <div class="system-topology">
         <span></span>
         <span></span>
