@@ -105,6 +105,11 @@ describe('ProjectView hero', () => {
     expect(wrapper.text()).toContain('Raspberry Pi')
     expect(wrapper.text()).toContain('RSH-10')
     expect(wrapper.text()).toContain('PWM 控制算法')
+    expect(wrapper.text()).toContain('低延迟、高带宽的数据与指令传输')
+    expect(wrapper.text()).toContain('完成微弱水声信号捕获、前置调理与 Raspberry Pi 数字处理链路贯通')
+    expect(wrapper.text()).toContain('复现背腹式仿生推进形态')
+    expect(wrapper.text()).not.toContain('作为核心计算大脑')
+    expect(wrapper.text()).not.toContain('打造水下主动感知“声眼”')
     expect(wrapper.text()).toContain('一种基于背腹式运动模式的仿生机械海豚设计')
     expect(
       wrapper.find('img[alt="一种基于背腹式运动模式的仿生机械海豚设计样机"]').exists()
