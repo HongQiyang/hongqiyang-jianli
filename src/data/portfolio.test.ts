@@ -190,5 +190,11 @@ describe('portfolio content', () => {
     expect(dolphin?.contribution.join(' ')).toContain('MOTION |')
     expect(dolphin?.contribution.join(' ')).toContain('PWM 控制算法')
     expect(dolphin?.contribution.join(' ')).not.toContain('担任电控与运动控制模块负责人')
+    expect(dolphin?.evidence.map((item) => item.src)).toEqual([
+      'assets/projects/dolphin/dolphin-back-ventral-prototype.jpg',
+      'assets/projects/dolphin/raspberry-power-sensehat.jpg',
+      'assets/projects/dolphin/rsh10.png'
+    ])
+    expect(dolphin?.evidence.map((item) => item.caption).join(' ')).toContain('Sense HAT')
   })
 })

@@ -161,12 +161,16 @@ describe('ProjectView hero', () => {
     expect(wrapper.text()).toContain('CONTROL | 以 Raspberry Pi 与 Linux 控制系统为核心')
     expect(wrapper.text()).toContain('ACOUSTICS | 集成 RSH-10 水声传感器')
     expect(wrapper.text()).toContain('MOTION | 基于高扭矩舵机与多连杆结构')
+    expect(wrapper.text()).toContain('硬件平台：树莓派主控、供电/扩展模块与 Sense HAT')
     expect(wrapper.text()).not.toContain('担任电控与运动控制模块负责人')
     expect(wrapper.text()).not.toContain('作为核心计算大脑')
     expect(wrapper.text()).not.toContain('打造水下主动感知“声眼”')
     expect(wrapper.text()).toContain('一种基于背腹式运动模式的仿生机械海豚设计')
     expect(
       wrapper.find('img[alt="一种基于背腹式运动模式的仿生机械海豚设计样机"]').exists()
+    ).toBe(true)
+    expect(
+      wrapper.find('img[alt="仿生海豚机器人树莓派供电与 Sense HAT 硬件平台"]').exists()
     ).toBe(true)
   })
 })

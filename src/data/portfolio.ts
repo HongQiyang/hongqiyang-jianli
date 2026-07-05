@@ -601,6 +601,13 @@ export const projects: Project[] = [
       },
       {
         kind: 'image',
+        src: 'assets/projects/dolphin/raspberry-power-sensehat.jpg',
+        alt: '仿生海豚机器人树莓派供电与 Sense HAT 硬件平台',
+        caption:
+          '硬件平台：树莓派主控、供电/扩展模块与 Sense HAT 组成基础控制与姿态感知硬件，为后续嵌入式控制和运动验证提供支撑。'
+      },
+      {
+        kind: 'image',
         src: 'assets/projects/dolphin/rsh10.png',
         alt: '仿生海豚机器人 RSH-10 水声传感器材料',
         caption: '水声感知模块：RSH-10 水声传感器作为机器人头部声学探测链路的核心输入。'
