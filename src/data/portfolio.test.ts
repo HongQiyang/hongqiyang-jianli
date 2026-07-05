@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { contact, projects, resume } from './portfolio'
+import { contact, profile, projects, resume } from './portfolio'
 
 function flattenPublicText(value: unknown): string {
   if (Array.isArray(value)) {
@@ -27,6 +27,22 @@ describe('portfolio content', () => {
   it('keeps public contact limited to email', () => {
     expect(contact.email).toBe('hongqiyang@stu.xmu.edu.cn')
     expect(flattenPublicText({ contact, projects })).not.toContain('18805068341')
+  })
+
+  it('attaches certificate proofs to representative homepage honors', () => {
+    expect(profile.honorProofs).toHaveLength(10)
+    expect(profile.honorProofs.map((proof) => proof.src)).toEqual([
+      'assets/honors/national-scholarship.png',
+      'assets/honors/xmu-commendation.png',
+      'assets/honors/top-ten-league-member.jpg',
+      'assets/honors/excellent-student-2024.png',
+      'assets/honors/merit-student-2025.png',
+      'assets/honors/robot-award-mudskipper-first.png',
+      'assets/honors/robot-award-tuna-third.jpg',
+      'assets/honors/fujian-intelligent-equipment-first.png',
+      'assets/honors/top-student-forum-second.jpg',
+      'assets/honors/patent-substantive-exam.png'
+    ])
   })
 
   it('marks the tuna robot as an in-progress project', () => {

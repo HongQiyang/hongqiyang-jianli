@@ -1109,6 +1109,68 @@ h2 {
   margin-top: 22px;
 }
 
+.honor-proof-block {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.honor-proof-eyebrow {
+  margin-bottom: 14px;
+}
+
+.honor-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.honor-proof-card {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  color: inherit;
+  text-align: left;
+  border: 1px solid rgba(124, 246, 235, 0.2);
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, rgba(124, 246, 235, 0.08), rgba(255, 255, 255, 0.025)),
+    rgba(3, 18, 33, 0.5);
+  cursor: zoom-in;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.honor-proof-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 246, 235, 0.58);
+  background:
+    linear-gradient(145deg, rgba(124, 246, 235, 0.13), rgba(255, 217, 130, 0.045)),
+    rgba(3, 18, 33, 0.62);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.honor-proof-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f8fbff;
+}
+
+.honor-proof-card span {
+  display: block;
+  min-height: 66px;
+  padding: 10px 12px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
 .focus-copy {
   display: grid;
   align-content: center;
@@ -2386,6 +2448,10 @@ h2 {
   }
 
   .practice-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .honor-proof-grid {
     grid-template-columns: 1fr;
   }
 

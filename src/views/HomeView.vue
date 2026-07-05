@@ -34,8 +34,41 @@
         <ul class="clean-list compact-list">
           <li v-for="honor in profile.honors" :key="honor">{{ honor }}</li>
         </ul>
+        <div class="honor-proof-block" aria-label="代表荣誉证明材料">
+          <p class="eyebrow honor-proof-eyebrow">Proofs</p>
+          <div class="honor-proof-grid">
+            <button
+              v-for="proof in profile.honorProofs"
+              :key="proof.src"
+              class="honor-proof-card"
+              type="button"
+              :aria-label="`放大查看${proof.alt}`"
+              @click="selectedHonorProof = proof"
+            >
+              <img :src="asset(proof.src)" :alt="proof.alt" />
+              <span>{{ proof.caption }}</span>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
+
+    <div
+      v-if="selectedHonorProof"
+      class="image-lightbox"
+      role="dialog"
+      aria-modal="true"
+      :aria-label="selectedHonorProof.alt"
+      @click.self="selectedHonorProof = null"
+    >
+      <button class="image-lightbox-close" type="button" aria-label="关闭图片预览" @click="selectedHonorProof = null">
+        ×
+      </button>
+      <figure>
+        <img :src="asset(selectedHonorProof.src)" :alt="selectedHonorProof.alt" />
+        <figcaption>{{ selectedHonorProof.caption }}</figcaption>
+      </figure>
+    </div>
 
     <section class="focus-section section-pad" aria-labelledby="focus-title">
       <div class="focus-copy" data-reveal>
@@ -59,11 +92,14 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { focusModules, profile } from '../data/portfolio'
+import type { EvidenceItem } from '../data/portfolio'
 import { runPageMotion } from '../animations'
 
-const profilePhotoSrc = `${import.meta.env.BASE_URL}assets/profile/headshot.png`
+const selectedHonorProof = ref<EvidenceItem | null>(null)
+const asset = (src: string) => `${import.meta.env.BASE_URL}${src}`
+const profilePhotoSrc = asset('assets/profile/headshot.png')
 
 onMounted(() => runPageMotion())
 </script>

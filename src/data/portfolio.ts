@@ -156,6 +156,68 @@ export const profile = {
     '厦门大学海洋与地球学院第五届拔尖本科生学术论坛汇报二等奖',
     '发明专利申请：一种基于仿生水声通信的仿生弹涂鱼水陆两栖机器人平台'
   ],
+  honorProofs: [
+    {
+      kind: 'image',
+      src: 'assets/honors/national-scholarship.png',
+      alt: '国家奖学金证书',
+      caption: '国家奖学金：2024年12月获评。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/xmu-commendation.png',
+      alt: '厦门大学通报表扬证明',
+      caption: '厦门大学通报表扬：2026年4月获得。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/top-ten-league-member.jpg',
+      alt: '厦门大学校十佳共青团员证书',
+      caption: '厦门大学校十佳共青团员：2025年度。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/excellent-student-2024.png',
+      alt: '厦门大学优秀三好学生证书',
+      caption: '厦门大学优秀三好学生：2024年9月获评。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/merit-student-2025.png',
+      alt: '厦门大学三好学生证书',
+      caption: '厦门大学三好学生：2025年9月获评。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/robot-award-mudskipper-first.png',
+      alt: '第十八届先进机器人及仿真技术大赛弹涂鱼项目国赛一等奖证书',
+      caption: '第十八届先进机器人及仿真技术大赛：弹涂鱼项目国赛一等奖。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/robot-award-tuna-third.jpg',
+      alt: '第十八届先进机器人及仿真技术大赛金枪鱼项目国赛获奖证明',
+      caption: '第十八届先进机器人及仿真技术大赛：金枪鱼项目国赛获奖证明。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/fujian-intelligent-equipment-first.png',
+      alt: '福建省大学生智能装备大赛省级一等奖证书',
+      caption: '福建省大学生智能装备大赛：省级一等奖。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/top-student-forum-second.jpg',
+      alt: '拔尖本科生学术论坛汇报二等奖证书',
+      caption: '厦门大学海洋与地球学院拔尖本科生学术论坛：汇报二等奖。'
+    },
+    {
+      kind: 'image',
+      src: 'assets/honors/patent-substantive-exam.png',
+      alt: '发明专利申请进入实质审查阶段通知书',
+      caption: '发明专利申请：仿生弹涂鱼水陆两栖机器人平台，已进入实质审查阶段。'
+    }
+  ] satisfies EvidenceItem[],
   about:
     '洪旗阳，本科就读于厦门大学海洋技术方向，项目兴趣集中在海洋声学、仿生机器人、水下通信与水下感知系统。曾就读于福建省厦门第一中学。'
 }
@@ -228,7 +290,7 @@ export const resume = {
       },
       attachments: [
         {
-          label: '返校宣讲现场照片 1',
+          label: '优秀实践队证明',
           href: 'assets/practice/files/winter-return-talk/winter-return-1.jpg',
           kind: 'JPG'
         },
@@ -362,7 +424,7 @@ export const resume = {
         kind: 'image',
         src: 'assets/practice/ocean-science-demo.png',
         alt: '2025暑期海洋科普实践现场',
-        caption: '海洋科普现场：围绕海底火山现象模拟小实验进行讲解与互动演示。'
+        caption: '围绕中小学生开展海洋科普教育活动。'
       },
       attachments: [
         {
@@ -381,12 +443,12 @@ export const resume = {
           kind: 'JPG'
         },
         {
-          label: '实践队伍展示材料',
+          label: '嘉梦海扬负责人证明',
           href: 'assets/practice/files/ocean-science-practice/summer-2025-team.png',
           kind: 'PNG'
         },
         {
-          label: '海底火山模拟实验材料',
+          label: '活动高光截图',
           href: 'assets/practice/files/ocean-science-practice/summer-2025-experiment.png',
           kind: 'PNG'
         }

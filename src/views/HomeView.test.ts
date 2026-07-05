@@ -77,6 +77,36 @@ describe('HomeView hero', () => {
     expect(wrapper.find('img[alt="洪旗阳个人证件照"]').attributes('src')).toContain(
       'assets/profile/headshot.png'
     )
+    expect(wrapper.findAll('.honor-proof-card')).toHaveLength(10)
+    expect(wrapper.find('img[alt="国家奖学金证书"]').attributes('src')).toContain(
+      'assets/honors/national-scholarship.png'
+    )
+    expect(text).toContain('国家奖学金：2024年12月获评。')
+    expect(text).toContain('发明专利申请：仿生弹涂鱼水陆两栖机器人平台，已进入实质审查阶段。')
+  })
+
+  it('opens representative honor certificates in the image preview', async () => {
+    const wrapper = mount(HomeView, {
+      global: {
+        stubs: {
+          RouterLink: {
+            props: ['to'],
+            template: '<a :data-to="to"><slot /></a>'
+          }
+        }
+      }
+    })
+
+    expect(wrapper.find('.image-lightbox').exists()).toBe(false)
+
+    await wrapper.find('.honor-proof-card').trigger('click')
+
+    expect(wrapper.find('.image-lightbox').exists()).toBe(true)
+    expect(wrapper.find('.image-lightbox img').attributes('alt')).toBe('国家奖学金证书')
+
+    await wrapper.find('.image-lightbox-close').trigger('click')
+
+    expect(wrapper.find('.image-lightbox').exists()).toBe(false)
   })
 
   it('uses the stronger opening statement and leaves email to the contact page', () => {
