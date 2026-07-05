@@ -70,6 +70,9 @@ describe('HomeView hero', () => {
     expect(text).toContain('厦门大学融润强海奖学金')
     expect(text).toContain('两项第十八届先进机器人及仿真技术大赛国家级一等奖')
     expect(text).toContain('一项第十八届先进机器人及仿真技术大赛国家级三等奖')
+    expect(text).toContain('福建省大学生智能装备大赛省级一等奖')
+    expect(text).toContain('厦门大学海洋与地球学院第五届拔尖本科生学术论坛汇报二等奖')
+    expect(text).toContain('发明专利申请：一种基于仿生水声通信的仿生弹涂鱼水陆两栖机器人平台')
   })
 
   it('uses the stronger opening statement and leaves email to the contact page', () => {
