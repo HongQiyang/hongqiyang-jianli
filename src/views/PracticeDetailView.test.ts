@@ -43,7 +43,7 @@ describe('PracticeDetailView', () => {
     expect(text).toContain('参与“青春为中国式现代化挺膺担当”主题暑期社会实践')
     expect(text).toContain('嘉庚号香港开放日志愿服务 Certificate of Appreciation')
     expect(wrapper.findAll('.report-card')).toHaveLength(5)
-    expect(wrapper.findAll('.practice-attachment-card')).toHaveLength(9)
+    expect(wrapper.findAll('.practice-attachment-card')).toHaveLength(7)
 
     const attachmentLinks = wrapper
       .findAll('.practice-attachment-card')
@@ -51,8 +51,6 @@ describe('PracticeDetailView', () => {
 
     expect(attachmentLinks).toEqual(
       expect.arrayContaining([
-        expect.stringContaining('assets/practice/files/kageng-open-day/summer-2024-statistics.pdf'),
-        expect.stringContaining('assets/practice/files/kageng-open-day/summer-2024-statistics.docx'),
         expect.stringContaining('assets/practice/files/kageng-open-day/kageng-volunteer-certificate.png')
       ])
     )

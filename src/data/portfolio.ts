@@ -311,16 +311,6 @@ export const resume = {
       },
       attachments: [
         {
-          label: '2024年厦门大学暑期社会实践活动情况统计表 PDF',
-          href: 'assets/practice/files/kageng-open-day/summer-2024-statistics.pdf',
-          kind: 'PDF'
-        },
-        {
-          label: '2024年厦门大学暑期社会实践活动情况统计表 DOCX',
-          href: 'assets/practice/files/kageng-open-day/summer-2024-statistics.docx',
-          kind: 'DOCX'
-        },
-        {
           label: '2024暑期社会实践积极分子证明',
           href: 'assets/practice/files/kageng-open-day/summer-2024-active-member.png',
           kind: 'PNG'

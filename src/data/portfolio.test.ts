@@ -209,13 +209,14 @@ describe('portfolio content', () => {
       'assets/practice/files/winter-return-talk/winter-return-2.jpg',
       'assets/practice/files/winter-return-talk/winter-return-3.jpg'
     ])
-    expect(kageng?.attachments).toHaveLength(9)
+    expect(kageng?.attachments).toHaveLength(7)
     expect(kageng?.attachments?.map((file) => file.href)).toEqual(
       expect.arrayContaining([
-        'assets/practice/files/kageng-open-day/summer-2024-statistics.pdf',
-        'assets/practice/files/kageng-open-day/summer-2024-statistics.docx',
         'assets/practice/files/kageng-open-day/kageng-volunteer-certificate.png'
       ])
+    )
+    expect(kageng?.attachments?.map((file) => file.href).join(' ')).not.toContain(
+      'summer-2024-statistics'
     )
     expect(science?.attachments).toHaveLength(5)
     expect(science?.attachments?.map((file) => file.href)).toContain(
