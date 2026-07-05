@@ -375,6 +375,34 @@ export const projects: Project[] = [
       },
       {
         kind: 'image',
+        src: 'assets/projects/mudskipper/labview-transmitter-panel.png',
+        alt: 'LabVIEW 仿生机器鱼通信系统发射端前面板',
+        caption:
+          'LabVIEW 发射端：展示发送周期、载波参数、调制阶数、运动指令与发射信号时频图等控制界面。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/labview-receiver-panel.png',
+        alt: 'LabVIEW 仿生机器鱼通信系统接收端前面板',
+        caption:
+          'LabVIEW 接收端：展示接收波形、频谱、误码反馈、运动指令解析与通信状态监测界面。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/sea-trial-signal-analysis.png',
+        alt: '弹涂鱼机器人海试信号时域与频域分析',
+        caption:
+          '海试信号：展示真实水声信号的局部放大时域波形、完整时域序列与频谱分析结果。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/motion-control-interface.png',
+        alt: '弹涂鱼机器人运动控制 LabVIEW 界面',
+        caption:
+          '运动控制：展示串口参数、通信数据缓冲区、运动参数控制区与命令字符串显示区。'
+      },
+      {
+        kind: 'image',
         src: 'assets/projects/mudskipper/pool-validation-two-views.png',
         alt: '弹涂鱼机器人水池验证双视角',
         caption:

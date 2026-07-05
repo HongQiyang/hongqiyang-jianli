@@ -55,6 +55,10 @@ describe('portfolio content', () => {
       'assets/projects/mudskipper/system-architecture.png',
       'assets/projects/mudskipper/acoustic-communication-link.png',
       'assets/projects/mudskipper/modulation-demodulation-flow.png',
+      'assets/projects/mudskipper/labview-transmitter-panel.png',
+      'assets/projects/mudskipper/labview-receiver-panel.png',
+      'assets/projects/mudskipper/sea-trial-signal-analysis.png',
+      'assets/projects/mudskipper/motion-control-interface.png',
       'assets/projects/mudskipper/pool-validation-two-views.png'
     ])
     const captions = mudskipper?.evidence.map((item) => item.caption).join(' ')
@@ -62,6 +66,10 @@ describe('portfolio content', () => {
     expect(captions).toContain('系统架构')
     expect(captions).toContain('水声链路')
     expect(captions).toContain('调制解调流程')
+    expect(captions).toContain('LabVIEW 发射端')
+    expect(captions).toContain('LabVIEW 接收端')
+    expect(captions).toContain('海试信号')
+    expect(captions).toContain('运动控制')
     expect(captions).toContain('水池验证')
   })
 
@@ -149,7 +157,7 @@ describe('portfolio content', () => {
   it('attaches patent and award proofs to the mudskipper project', () => {
     const mudskipper = projects.find((project) => project.slug === 'mudskipper')
 
-    expect(mudskipper?.evidence).toHaveLength(6)
+    expect(mudskipper?.evidence).toHaveLength(10)
     expect(mudskipper?.proofs?.map((item) => item.src)).toEqual([
       'assets/projects/mudskipper/patent-substantive-exam.png',
       'assets/projects/mudskipper/robot-competition-award.png'
