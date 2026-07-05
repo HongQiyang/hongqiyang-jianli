@@ -351,6 +351,34 @@ export const projects: Project[] = [
         alt: '弹涂鱼机器人实物与结构标注对照',
         caption:
           '弹涂鱼机器人实物与结构标注对照：实物样机与结构标注展示弹涂鱼仿生机器人平台的外形样机、尾鳍推进结构、胸鳍支撑、水声换能器与防水摄像头等关键模块。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/system-architecture.png',
+        alt: '弹涂鱼机器人系统架构与分层模块',
+        caption:
+          '系统架构：展示陆地操作端、机器人内部决策层、传感层、驱动层、供电层与水声换能器之间的整体连接关系。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/acoustic-communication-link.png',
+        alt: '弹涂鱼机器人水声通信发送端与接收端流程',
+        caption:
+          '水声链路：展示信息编码、二进制序列生成、调制、数模转换、水声信道传输与接收端解调解码流程。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/modulation-demodulation-flow.png',
+        alt: '仿生水声隐蔽通信调制解调流程',
+        caption:
+          '调制解调流程：以仿生信号为载波，展示星座映射、同步头、训练序列、码元帧结构及接收端相位差解调链路。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/mudskipper/pool-validation-two-views.png',
+        alt: '弹涂鱼机器人水池验证双视角',
+        caption:
+          '水池验证：双视角记录机器人吊放与水下姿态，用于说明平台运动验证、水池测试与工程调试过程。'
       }
     ],
     proofs: [

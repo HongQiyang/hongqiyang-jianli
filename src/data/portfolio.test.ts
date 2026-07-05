@@ -51,11 +51,18 @@ describe('portfolio content', () => {
 
     expect(mudskipper?.evidence.map((item) => item.src)).toEqual([
       'assets/projects/mudskipper/demo.mp4',
-      'assets/projects/mudskipper/prototype-structure-overview.png'
+      'assets/projects/mudskipper/prototype-structure-overview.png',
+      'assets/projects/mudskipper/system-architecture.png',
+      'assets/projects/mudskipper/acoustic-communication-link.png',
+      'assets/projects/mudskipper/modulation-demodulation-flow.png',
+      'assets/projects/mudskipper/pool-validation-two-views.png'
     ])
-    expect(mudskipper?.evidence.map((item) => item.caption).join(' ')).toContain(
-      '实物样机与结构标注'
-    )
+    const captions = mudskipper?.evidence.map((item) => item.caption).join(' ')
+    expect(captions).toContain('实物样机与结构标注')
+    expect(captions).toContain('系统架构')
+    expect(captions).toContain('水声链路')
+    expect(captions).toContain('调制解调流程')
+    expect(captions).toContain('水池验证')
   })
 
   it('uses the selected technical diagrams as project hero images', () => {
@@ -142,7 +149,7 @@ describe('portfolio content', () => {
   it('attaches patent and award proofs to the mudskipper project', () => {
     const mudskipper = projects.find((project) => project.slug === 'mudskipper')
 
-    expect(mudskipper?.evidence).toHaveLength(2)
+    expect(mudskipper?.evidence).toHaveLength(6)
     expect(mudskipper?.proofs?.map((item) => item.src)).toEqual([
       'assets/projects/mudskipper/patent-substantive-exam.png',
       'assets/projects/mudskipper/robot-competition-award.png'

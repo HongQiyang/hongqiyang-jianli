@@ -41,9 +41,15 @@ describe('ProjectView hero', () => {
     expect(wrapper.text()).toContain('突破传统水声通信节点布放后难以主动调整位置与姿态的局限')
     expect(wrapper.text()).toContain('核心专利及算法细节均已脱敏处理')
     expect(wrapper.text()).toContain('弹涂鱼机器人实物与结构标注对照')
+    expect(wrapper.text()).toContain('系统架构：展示陆地操作端')
+    expect(wrapper.text()).toContain('调制解调流程：以仿生信号为载波')
+    expect(wrapper.text()).toContain('水池验证：双视角记录机器人吊放与水下姿态')
     expect(
       wrapper.find('img[alt="弹涂鱼机器人实物与结构标注对照"]').exists()
     ).toBe(true)
+    expect(wrapper.find('img[alt="弹涂鱼机器人系统架构与分层模块"]').exists()).toBe(true)
+    expect(wrapper.find('img[alt="仿生水声隐蔽通信调制解调流程"]').exists()).toBe(true)
+    expect(wrapper.find('img[alt="弹涂鱼机器人水池验证双视角"]').exists()).toBe(true)
     expect(wrapper.text()).not.toContain('从固定通信节点到可移动仿生载体')
   })
 
