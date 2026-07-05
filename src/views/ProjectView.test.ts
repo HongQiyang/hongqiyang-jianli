@@ -94,6 +94,37 @@ describe('ProjectView hero', () => {
     expect(wrapper.findAll('.report-card')).toHaveLength(26)
   })
 
+  it('shows the refined tuna project card copy', async () => {
+    const router = createRouter({
+      history: createWebHistory('/hongqiyang-jianli/'),
+      routes: [{ path: '/projects/:slug', component: ProjectView }]
+    })
+
+    router.push('/projects/tuna')
+    await router.isReady()
+
+    const wrapper = mount(ProjectView, {
+      global: {
+        plugins: [router],
+        stubs: {
+          RouterLink: {
+            props: ['to'],
+            template: '<a><slot /></a>'
+          }
+        }
+      }
+    })
+
+    expect(wrapper.find('h1').text()).toBe('适用于被动声学监测的金枪鱼仿生探测机器人')
+    expect(wrapper.text()).toContain('依托校级大创项目开发金枪鱼仿生平台')
+    expect(wrapper.text()).toContain('实验仿真与样机验证阶段')
+    expect(wrapper.text()).toContain('现阶段聚焦水池实验前的系统联调')
+    expect(wrapper.text()).toContain('三水听器探测阵列')
+    expect(wrapper.text()).toContain('LSTM 运动优化算法的协同控制关系')
+    expect(wrapper.text()).not.toContain('校级大学生创新创业训练项目')
+    expect(wrapper.text()).not.toContain('公开展示重点放在系统架构')
+  })
+
   it('shows the dolphin innovation project as a project detail page', async () => {
     const router = createRouter({
       history: createWebHistory('/hongqiyang-jianli/'),

@@ -37,9 +37,15 @@ describe('portfolio content', () => {
     expect(tuna?.summary).toBe(
       '本项目面向水下被动声学监测应用，已完成仿真实验与初步验证，当前正处于由仿真验证向水池实验过渡的阶段，后续将开展水池实验以进一步验证系统性能。'
     )
-    expect(tuna?.sections.map((section) => section.body).join(' ')).toContain('校级大学生创新创业训练项目')
+    expect(tuna?.sections.map((section) => section.body).join(' ')).toContain('依托校级大创项目开发金枪鱼仿生平台')
     expect(tuna?.sections.find((section) => section.eyebrow === 'Progress')?.title).toBe(
-      '实验仿真验证阶段'
+      '实验仿真与样机验证阶段'
+    )
+    expect(tuna?.sections.map((section) => section.body).join(' ')).toContain(
+      '现阶段聚焦水池实验前的系统联调'
+    )
+    expect(tuna?.sections.map((section) => section.body).join(' ')).toContain(
+      '三水听器探测阵列'
     )
     expect(tuna?.flow).toContain('实验仿真验证')
     expect(tuna?.flow).toContain('滤波电路板绘制')
@@ -149,7 +155,7 @@ describe('portfolio content', () => {
       'assets/projects/tuna/prototype-v1-enhanced.png',
       'assets/projects/tuna/rhc-7.png'
     ])
-    expect(tuna?.sections.map((section) => section.body).join(' ')).toContain('滤波电路板')
+    expect(tuna?.sections.map((section) => section.body).join(' ')).toContain('定制滤波电路')
     expect(tuna?.sections.map((section) => section.body).join(' ')).toContain('初代样机')
     expect(tuna?.evidence.map((item) => item.caption).join(' ')).toContain('RHC-7')
   })
