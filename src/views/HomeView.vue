@@ -41,7 +41,7 @@
       <div class="focus-copy" data-reveal>
         <p class="eyebrow">Focus</p>
         <h2 id="focus-title">把抽象理论转化为可运行的水下系统</h2>
-        <RouterLink class="text-link" to="/projects">查看全部项目 →</RouterLink>
+        <RouterLink class="text-link" to="/projects">查看全部项目</RouterLink>
       </div>
       <div class="focus-grid" data-reveal>
         <article
