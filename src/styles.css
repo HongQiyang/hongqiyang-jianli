@@ -1353,6 +1353,19 @@ h2 {
   align-items: start;
 }
 
+.practice-index-entry {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.practice-index-entry .practice-entry-copy {
+  max-width: 900px;
+}
+
+.practice-index-entry .project-title-link {
+  font-size: clamp(24px, 3vw, 34px);
+}
+
 .practice-image-button {
   width: 100%;
   border: 0;
@@ -1415,6 +1428,90 @@ h2 {
 
 .practice-report-list strong {
   font-size: 16px;
+}
+
+.practice-hero-image-button {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.practice-detail-image {
+  transition:
+    border-color 180ms ease,
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.practice-hero-image-button:hover .practice-detail-image {
+  border-color: rgba(124, 246, 235, 0.65);
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+}
+
+.practice-detail-proof {
+  min-width: 0;
+}
+
+.section-lead {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-weight: 760;
+}
+
+.attachment-section {
+  border-top: 1px solid var(--line);
+}
+
+.practice-attachment-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.practice-attachment-card {
+  min-height: 116px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  border: 1px solid rgba(189, 235, 255, 0.2);
+  border-radius: var(--radius);
+  padding: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
+    var(--surface);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.practice-attachment-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(96, 241, 232, 0.5);
+  background:
+    linear-gradient(135deg, rgba(96, 241, 232, 0.12), rgba(243, 206, 122, 0.05)),
+    var(--surface);
+}
+
+.practice-attachment-card span {
+  width: max-content;
+  border: 1px solid rgba(96, 241, 232, 0.28);
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.practice-attachment-card strong {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.45;
 }
 
 .practice-card {
@@ -2298,6 +2395,10 @@ h2 {
   }
 
   .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-attachment-list {
     grid-template-columns: 1fr;
   }
 

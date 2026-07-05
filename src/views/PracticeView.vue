@@ -15,112 +15,39 @@
       </div>
 
       <article
-        v-for="(practice, index) in resume.practices"
-        :id="`practice-${index + 1}`"
+        v-for="practice in resume.practices"
         :key="practice.title"
-        class="project-entry practice-entry"
+        class="project-entry practice-entry practice-index-entry"
         data-reveal
       >
-        <button
-          class="practice-image-button"
-          type="button"
-          :aria-label="`放大查看${practice.image.alt}`"
-          @click="selectedImage = practice.image"
-        >
-          <img
-            class="practice-entry-image"
-            :src="asset(practice.image.src)"
-            :alt="practice.image.alt"
-            loading="lazy"
-          />
-        </button>
         <div class="practice-entry-copy">
           <p class="project-status">{{ practice.date }}</p>
-          <a class="project-title-link" :href="`#practice-${index + 1}`">
+          <RouterLink class="project-title-link" :to="`/practice/${practice.slug}`">
             {{ practice.title }}
-          </a>
-          <p class="project-summary">{{ practice.result }}</p>
+          </RouterLink>
+          <p class="project-summary">{{ practice.summary }}</p>
           <p class="timeline-role">{{ practice.role }}</p>
-          <ul class="clean-list compact-list">
-            <li v-for="point in practice.points" :key="point">{{ point }}</li>
-          </ul>
-          <div v-if="practice.honors?.length || practice.reports?.length" class="practice-proof-block">
-            <h4>荣誉与报道</h4>
-            <div v-if="practice.honors?.length" class="credential-row practice-honor-row">
-              <span v-for="honor in practice.honors" :key="honor">{{ honor }}</span>
-            </div>
-            <div v-if="practice.reports?.length" class="compact-report-list practice-report-list">
-              <a
-                v-for="report in practice.reports"
-                :key="report.href"
-                :href="publicHref(report.href)"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>{{ report.category }}</span>
-                <strong>{{ report.source }}</strong>
-                <em>{{ report.title }}</em>
-              </a>
-            </div>
-          </div>
-          <p class="practice-caption">{{ practice.image.caption }}</p>
         </div>
-        <a
+        <RouterLink
           class="project-arrow"
-          :href="`#practice-${index + 1}`"
+          :to="`/practice/${practice.slug}`"
           :aria-label="`查看${practice.title}`"
         >
           →
-        </a>
+        </RouterLink>
         <div class="keyword-row">
           <span>{{ practice.role }}</span>
           <span>{{ practice.result }}</span>
         </div>
       </article>
     </section>
-
-    <div
-      v-if="selectedImage"
-      class="image-lightbox"
-      role="dialog"
-      aria-modal="true"
-      @click="selectedImage = null"
-    >
-      <button
-        class="image-lightbox-close"
-        type="button"
-        aria-label="关闭图片预览"
-        @click.stop="selectedImage = null"
-      >
-        ×
-      </button>
-      <figure @click.stop>
-        <img :src="asset(selectedImage.src)" :alt="selectedImage.alt" />
-        <figcaption>{{ selectedImage.caption }}</figcaption>
-      </figure>
-    </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { resume } from '../data/portfolio'
-import type { EvidenceItem } from '../data/portfolio'
 import { runPageMotion } from '../animations'
-
-function asset(src: string): string {
-  return `${import.meta.env.BASE_URL}${src}`
-}
-
-function publicHref(href: string): string {
-  if (/^(https?:|mailto:|tel:)/.test(href) || href.startsWith('#')) {
-    return href
-  }
-
-  return asset(href)
-}
-
-const selectedImage = ref<EvidenceItem | null>(null)
 
 onMounted(() => runPageMotion())
 </script>

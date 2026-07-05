@@ -197,4 +197,29 @@ describe('portfolio content', () => {
     ])
     expect(dolphin?.evidence.map((item) => item.caption).join(' ')).toContain('Sense HAT')
   })
+
+  it('attaches local evidence files to social practice detail pages', () => {
+    const practices = resume.practices
+    const winter = practices.find((practice) => practice.slug === 'winter-return-talk')
+    const kageng = practices.find((practice) => practice.slug === 'kageng-open-day')
+    const science = practices.find((practice) => practice.slug === 'ocean-science-practice')
+
+    expect(winter?.attachments?.map((file) => file.href)).toEqual([
+      'assets/practice/files/winter-return-talk/winter-return-1.jpg',
+      'assets/practice/files/winter-return-talk/winter-return-2.jpg',
+      'assets/practice/files/winter-return-talk/winter-return-3.jpg'
+    ])
+    expect(kageng?.attachments).toHaveLength(9)
+    expect(kageng?.attachments?.map((file) => file.href)).toEqual(
+      expect.arrayContaining([
+        'assets/practice/files/kageng-open-day/summer-2024-statistics.pdf',
+        'assets/practice/files/kageng-open-day/summer-2024-statistics.docx',
+        'assets/practice/files/kageng-open-day/kageng-volunteer-certificate.png'
+      ])
+    )
+    expect(science?.attachments).toHaveLength(5)
+    expect(science?.attachments?.map((file) => file.href)).toContain(
+      'assets/practice/files/ocean-science-practice/summer-2025-proof.pdf'
+    )
+  })
 })

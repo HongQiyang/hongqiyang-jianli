@@ -16,6 +16,12 @@ export type ReportLink = {
   note: string
 }
 
+type ResumeAttachment = {
+  label: string
+  href: string
+  kind: string
+}
+
 export type Project = {
   slug: 'mudskipper' | 'tuna' | 'haisi' | 'dolphin'
   href: string
@@ -44,14 +50,17 @@ type ResumeResearchProject = {
 }
 
 type ResumePractice = {
+  slug: string
   date: string
   title: string
   role: string
+  summary: string
   result: string
   points: string[]
   image: EvidenceItem
   honors?: string[]
   reports?: ReportLink[]
+  attachments?: ResumeAttachment[]
 }
 
 const haisiReportEntries = [
@@ -172,9 +181,11 @@ export const resume = {
   researchProjects: [] as ResumeResearchProject[],
   practices: [
     {
+      slug: 'winter-return-talk',
       date: '2024.02 - 2024.04',
       title: '2024寒假返校宣讲',
       role: '厦门第一大学队成员 / 宣讲汇报人',
+      summary: '面向母校厦门一中开展返校宣讲，分享大学学习、专业选择与校园成长经历。',
       result: '厦门大学2024年寒假社会实践活动“优秀团队”',
       points: [
         '面向母校福建省厦门第一中学开展返校宣讲，围绕大学学习、专业选择与校园生活进行经验分享。',
@@ -185,12 +196,31 @@ export const resume = {
         src: 'assets/practice/winter-return-talk.jpg',
         alt: '2024寒假返校宣讲现场',
         caption: '返校宣讲现场：面向厦门一中同学分享大学学习、专业选择与校园经历。'
-      }
+      },
+      attachments: [
+        {
+          label: '返校宣讲现场照片 1',
+          href: 'assets/practice/files/winter-return-talk/winter-return-1.jpg',
+          kind: 'JPG'
+        },
+        {
+          label: '返校宣讲现场照片 2',
+          href: 'assets/practice/files/winter-return-talk/winter-return-2.jpg',
+          kind: 'JPG'
+        },
+        {
+          label: '返校宣讲现场照片 3',
+          href: 'assets/practice/files/winter-return-talk/winter-return-3.jpg',
+          kind: 'JPG'
+        }
+      ]
     },
     {
+      slug: 'kageng-open-day',
       date: '2024.07 - 2025.06',
       title: '2024暑期社会实践与嘉庚号开放日志愿服务',
       role: '实践队成员 / 嘉庚号开放日志愿者',
+      summary: '参与暑期社会实践与嘉庚号香港开放日志愿服务，支撑公众科普、展览协助与国际交流场景。',
       result: '获评2024年主题暑期社会实践活动“积极分子”，并获得嘉庚号香港开放日志愿服务 Certificate of Appreciation',
       points: [
         '参与“青春为中国式现代化挺膺担当”主题暑期社会实践，完成现场调研、活动组织、材料整理与成果汇总。',
@@ -249,12 +279,61 @@ export const resume = {
         src: 'assets/practice/kageng-open-day-certificate.png',
         alt: '嘉庚号香港开放日志愿服务证书',
         caption: '嘉庚号香港开放日志愿服务：参与公众开放日与展览协助，获得 Certificate of Appreciation。'
-      }
+      },
+      attachments: [
+        {
+          label: '2024年厦门大学暑期社会实践活动情况统计表 PDF',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-statistics.pdf',
+          kind: 'PDF'
+        },
+        {
+          label: '2024年厦门大学暑期社会实践活动情况统计表 DOCX',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-statistics.docx',
+          kind: 'DOCX'
+        },
+        {
+          label: '2024暑期社会实践积极分子证明',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-active-member.png',
+          kind: 'PNG'
+        },
+        {
+          label: '暑期社会实践荣誉证书扫描件',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-award-scan.pdf',
+          kind: 'PDF'
+        },
+        {
+          label: '嘉庚号香港开放日志愿服务证书',
+          href: 'assets/practice/files/kageng-open-day/kageng-volunteer-certificate.png',
+          kind: 'PNG'
+        },
+        {
+          label: '2024暑期实践现场材料 1',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-field-1.jpg',
+          kind: 'JPG'
+        },
+        {
+          label: '2024暑期实践现场材料 2',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-field-2.jpg',
+          kind: 'JPG'
+        },
+        {
+          label: '2024暑期实践现场材料 3',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-field-3.jpg',
+          kind: 'JPG'
+        },
+        {
+          label: '2024暑期实践现场材料 4',
+          href: 'assets/practice/files/kageng-open-day/summer-2024-field-4.jpg',
+          kind: 'JPG'
+        }
+      ]
     },
     {
+      slug: 'ocean-science-practice',
       date: '2025.07 - 2025.12',
       title: '2025暑期海洋科普社会实践',
       role: '实践队成员 / 科普讲解',
+      summary: '围绕海洋科普实验开展现场讲解与互动演示，将专业学习转化为面向公众的科学传播。',
       result: '获评厦门大学2025年主题暑期社会实践活动“积极分子”',
       points: [
         '参与面向中小学的海洋科普活动，围绕“海底火山现象模拟小实验”等内容进行现场讲解与互动演示。',
@@ -265,7 +344,34 @@ export const resume = {
         src: 'assets/practice/ocean-science-demo.png',
         alt: '2025暑期海洋科普实践现场',
         caption: '海洋科普现场：围绕海底火山现象模拟小实验进行讲解与互动演示。'
-      }
+      },
+      attachments: [
+        {
+          label: '2025暑期实践积极分子证明',
+          href: 'assets/practice/files/ocean-science-practice/summer-2025-active-member.png',
+          kind: 'PNG'
+        },
+        {
+          label: '2025暑期实践证明材料',
+          href: 'assets/practice/files/ocean-science-practice/summer-2025-proof.pdf',
+          kind: 'PDF'
+        },
+        {
+          label: '海洋科普实践现场照片',
+          href: 'assets/practice/files/ocean-science-practice/summer-2025-field-photo.jpg',
+          kind: 'JPG'
+        },
+        {
+          label: '实践队伍展示材料',
+          href: 'assets/practice/files/ocean-science-practice/summer-2025-team.png',
+          kind: 'PNG'
+        },
+        {
+          label: '海底火山模拟实验材料',
+          href: 'assets/practice/files/ocean-science-practice/summer-2025-experiment.png',
+          kind: 'PNG'
+        }
+      ]
     }
   ] as ResumePractice[],
   mediaReports: haisiReports,
@@ -618,4 +724,8 @@ export const projects: Project[] = [
 
 export function findProject(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug)
+}
+
+export function findPractice(slug: string): ResumePractice | undefined {
+  return resume.practices.find((practice) => practice.slug === slug)
 }
