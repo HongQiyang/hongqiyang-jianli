@@ -32,24 +32,27 @@
         <p class="eyebrow">Honors</p>
         <h2>代表荣誉</h2>
         <ul class="clean-list compact-list">
-          <li v-for="honor in profile.honors" :key="honor">{{ honor }}</li>
+          <li v-for="honor in profile.honors" :key="honor.label" class="honor-item">
+            <span>{{ honor.label }}</span>
+            <span v-if="honor.proofs?.length" class="honor-proof-links" aria-label="荣誉证明链接">
+              <button
+                v-for="proof in honor.proofs"
+                :key="proof.src"
+                class="honor-proof-link"
+                type="button"
+                :aria-label="`查看${proof.alt}`"
+                @click="selectedHonorProof = proof"
+              >
+                <span>{{ proof.label }}</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M7 17 17 7" />
+                  <path d="M9 7h8v8" />
+                  <path d="M15 17H7V9" />
+                </svg>
+              </button>
+            </span>
+          </li>
         </ul>
-        <div class="honor-proof-block" aria-label="代表荣誉证明材料">
-          <p class="eyebrow honor-proof-eyebrow">Proofs</p>
-          <div class="honor-proof-grid">
-            <button
-              v-for="proof in profile.honorProofs"
-              :key="proof.src"
-              class="honor-proof-card"
-              type="button"
-              :aria-label="`放大查看${proof.alt}`"
-              @click="selectedHonorProof = proof"
-            >
-              <img :src="asset(proof.src)" :alt="proof.alt" />
-              <span>{{ proof.caption }}</span>
-            </button>
-          </div>
-        </div>
       </div>
     </section>
 

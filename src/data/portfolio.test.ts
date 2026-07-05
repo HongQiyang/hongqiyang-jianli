@@ -30,8 +30,13 @@ describe('portfolio content', () => {
   })
 
   it('attaches certificate proofs to representative homepage honors', () => {
-    expect(profile.honorProofs).toHaveLength(10)
-    expect(profile.honorProofs.map((proof) => proof.src)).toEqual([
+    const honorProofs = profile.honors.flatMap((honor) => honor.proofs ?? [])
+
+    expect(honorProofs).toHaveLength(11)
+    expect(profile.honors.map((honor) => honor.label)).toContain(
+      '两项第十八届先进机器人及仿真技术大赛国家级三等奖'
+    )
+    expect(honorProofs.map((proof) => proof.src)).toEqual([
       'assets/honors/national-scholarship.png',
       'assets/honors/xmu-commendation.png',
       'assets/honors/top-ten-league-member.jpg',
@@ -39,6 +44,7 @@ describe('portfolio content', () => {
       'assets/honors/merit-student-2025.png',
       'assets/honors/robot-award-mudskipper-first.png',
       'assets/honors/robot-award-tuna-third.jpg',
+      'assets/honors/robot-award-rov-third.png',
       'assets/honors/fujian-intelligent-equipment-first.png',
       'assets/honors/top-student-forum-second.jpg',
       'assets/honors/patent-substantive-exam.png'

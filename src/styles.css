@@ -1109,66 +1109,55 @@ h2 {
   margin-top: 22px;
 }
 
-.honor-proof-block {
-  margin-top: 28px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-
-.honor-proof-eyebrow {
-  margin-bottom: 14px;
-}
-
-.honor-proof-grid {
+.honor-item {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px;
+  align-items: center;
 }
 
-.honor-proof-card {
-  min-width: 0;
-  padding: 0;
-  overflow: hidden;
-  color: inherit;
-  text-align: left;
-  border: 1px solid rgba(124, 246, 235, 0.2);
-  border-radius: 14px;
-  background:
-    linear-gradient(145deg, rgba(124, 246, 235, 0.08), rgba(255, 255, 255, 0.025)),
-    rgba(3, 18, 33, 0.5);
-  cursor: zoom-in;
+.honor-proof-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.honor-proof-link {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(124, 246, 235, 0.3);
+  border-radius: 999px;
+  padding: 0 9px 0 11px;
+  background: rgba(124, 246, 235, 0.09);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
   transition:
     transform 180ms ease,
     border-color 180ms ease,
     background 180ms ease,
-    box-shadow 180ms ease;
+    color 180ms ease;
 }
 
-.honor-proof-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(124, 246, 235, 0.58);
-  background:
-    linear-gradient(145deg, rgba(124, 246, 235, 0.13), rgba(255, 217, 130, 0.045)),
-    rgba(3, 18, 33, 0.62);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+.honor-proof-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(124, 246, 235, 0.72);
+  background: rgba(124, 246, 235, 0.2);
+  color: #eaffff;
 }
 
-.honor-proof-card img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  background: #f8fbff;
-}
-
-.honor-proof-card span {
-  display: block;
-  min-height: 66px;
-  padding: 10px 12px 12px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 850;
-  line-height: 1.5;
+.honor-proof-link svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .focus-copy {
@@ -2451,8 +2440,13 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .honor-proof-grid {
+  .honor-item {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .honor-proof-links {
+    justify-content: flex-start;
   }
 
   .practice-entry .keyword-row {

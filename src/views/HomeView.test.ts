@@ -69,7 +69,7 @@ describe('HomeView hero', () => {
     expect(text).toContain('校优秀三好学生')
     expect(text).toContain('厦门大学融润强海奖学金')
     expect(text).toContain('两项第十八届先进机器人及仿真技术大赛国家级一等奖')
-    expect(text).toContain('一项第十八届先进机器人及仿真技术大赛国家级三等奖')
+    expect(text).toContain('两项第十八届先进机器人及仿真技术大赛国家级三等奖')
     expect(text).toContain('福建省大学生智能装备大赛省级一等奖')
     expect(text).toContain('厦门大学海洋与地球学院第五届拔尖本科生学术论坛汇报二等奖')
     expect(text).toContain('发明专利申请：一种基于仿生水声通信的仿生弹涂鱼水陆两栖机器人平台')
@@ -77,12 +77,11 @@ describe('HomeView hero', () => {
     expect(wrapper.find('img[alt="洪旗阳个人证件照"]').attributes('src')).toContain(
       'assets/profile/headshot.png'
     )
-    expect(wrapper.findAll('.honor-proof-card')).toHaveLength(10)
-    expect(wrapper.find('img[alt="国家奖学金证书"]').attributes('src')).toContain(
-      'assets/honors/national-scholarship.png'
+    expect(wrapper.findAll('.honor-proof-link')).toHaveLength(11)
+    expect(wrapper.find('[aria-label="查看国家奖学金证书"]').exists()).toBe(true)
+    expect(wrapper.find('[aria-label="查看第十八届先进机器人及仿真技术大赛 ROV 项目国赛三等奖证书"]').exists()).toBe(
+      true
     )
-    expect(text).toContain('国家奖学金：2024年12月获评。')
-    expect(text).toContain('发明专利申请：仿生弹涂鱼水陆两栖机器人平台，已进入实质审查阶段。')
   })
 
   it('opens representative honor certificates in the image preview', async () => {
@@ -99,10 +98,11 @@ describe('HomeView hero', () => {
 
     expect(wrapper.find('.image-lightbox').exists()).toBe(false)
 
-    await wrapper.find('.honor-proof-card').trigger('click')
+    await wrapper.find('.honor-proof-link').trigger('click')
 
     expect(wrapper.find('.image-lightbox').exists()).toBe(true)
     expect(wrapper.find('.image-lightbox img').attributes('alt')).toBe('国家奖学金证书')
+    expect(wrapper.find('.image-lightbox figcaption').text()).toBe('国家奖学金：2024年12月获评。')
 
     await wrapper.find('.image-lightbox-close').trigger('click')
 
