@@ -84,6 +84,11 @@ describe('ProjectView hero', () => {
 
     expect(wrapper.find('h1').text()).toBe('厦门大学第六届“海丝学堂”航次与水声信道分析')
     expect(wrapper.find('.report-section').exists()).toBe(true)
+    expect(wrapper.text()).toContain('引入 OFDM 多载波调制与 DSSS 直接序列扩频技术')
+    expect(wrapper.text()).toContain('OFDM 技术：通过多载波正交复用提升频谱利用率')
+    expect(wrapper.text()).toContain('DSSS 技术：通过扩频码将用户数据展宽到更宽频带')
+    expect(wrapper.find('img[alt="OFDM 多载波调制技术原理"]').exists()).toBe(true)
+    expect(wrapper.find('img[alt="DSSS 直接序列扩频技术原理"]').exists()).toBe(true)
     expect(wrapper.text()).toContain('国家级权威媒体报道')
     expect(wrapper.text()).toContain('省级媒体报道')
     expect(wrapper.text()).toContain('市级媒体报道')

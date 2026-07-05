@@ -486,7 +486,7 @@ export const projects: Project[] = [
     title: '厦门大学第六届“海丝学堂”航次与水声信道分析',
     status: 'Field Analysis',
     summary:
-      '基于海上航次实验，围绕水声通信、环境噪声测量与频谱分析整理真实实验经历。',
+      '依托真实海上航次，系统开展水声通信验证、环境噪声测量与频谱分析，完整沉淀海试工程实践经验。',
     keywords: ['航次实验', 'OFDM', 'DSSS', '环境噪声', '频谱分析'],
     heroImage: 'assets/projects/haisi/voyage-hero.jpg',
     sections: [
@@ -500,7 +500,7 @@ export const projects: Project[] = [
         eyebrow: 'METHODS',
         title: '信号处理方法',
         body:
-          '围绕 OFDM、DSSS 与水声图像通信，开展频谱分析、功率谱估计和噪声特征提取。'
+          '引入 OFDM 多载波调制与 DSSS 直接序列扩频技术，围绕水声图像通信开展频谱分析、功率谱估计和噪声特征提取。'
       },
       {
         eyebrow: 'EVIDENCE',
@@ -539,6 +539,20 @@ export const projects: Project[] = [
         src: 'assets/projects/haisi/image-transmission-comparison.png',
         alt: '海丝学堂图像传输效果对比',
         caption: '图像传输：不同信噪比条件下的水声图像接收效果对比。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/haisi/ofdm-principle.png',
+        alt: 'OFDM 多载波调制技术原理',
+        caption:
+          'OFDM 技术：通过多载波正交复用提升频谱利用率，为水声图像通信与复杂信道下的抗干扰传输提供方法支撑。'
+      },
+      {
+        kind: 'image',
+        src: 'assets/projects/haisi/dsss-principle.png',
+        alt: 'DSSS 直接序列扩频技术原理',
+        caption:
+          'DSSS 技术：通过扩频码将用户数据展宽到更宽频带，提高弱信号传输的抗干扰能力与隐蔽性。'
       }
     ],
     reports: haisiReports

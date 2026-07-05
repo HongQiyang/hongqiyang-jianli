@@ -73,6 +73,10 @@ describe('HomeView hero', () => {
     expect(text).toContain('福建省大学生智能装备大赛省级一等奖')
     expect(text).toContain('厦门大学海洋与地球学院第五届拔尖本科生学术论坛汇报二等奖')
     expect(text).toContain('发明专利申请：一种基于仿生水声通信的仿生弹涂鱼水陆两栖机器人平台')
+    expect(wrapper.find('.profile-photo-card').exists()).toBe(true)
+    expect(wrapper.find('img[alt="洪旗阳个人证件照"]').attributes('src')).toContain(
+      'assets/profile/headshot.png'
+    )
   })
 
   it('uses the stronger opening statement and leaves email to the contact page', () => {

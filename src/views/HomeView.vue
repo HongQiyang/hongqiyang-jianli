@@ -24,6 +24,9 @@
           <strong>科研方向</strong>
           {{ profile.researchObjective }}
         </p>
+        <div class="profile-photo-card" aria-label="个人照片">
+          <img :src="profilePhotoSrc" alt="洪旗阳个人证件照" />
+        </div>
       </div>
       <div class="honor-panel">
         <p class="eyebrow">Honors</p>
@@ -59,6 +62,8 @@
 import { onMounted } from 'vue'
 import { focusModules, profile } from '../data/portfolio'
 import { runPageMotion } from '../animations'
+
+const profilePhotoSrc = `${import.meta.env.BASE_URL}assets/profile/headshot.png`
 
 onMounted(() => runPageMotion())
 </script>

@@ -95,6 +95,9 @@ describe('portfolio content', () => {
   it('uses the selected voyage proof images as haisi evidence', () => {
     const haisi = projects.find((project) => project.slug === 'haisi')
 
+    expect(haisi?.summary).toBe(
+      '依托真实海上航次，系统开展水声通信验证、环境噪声测量与频谱分析，完整沉淀海试工程实践经验。'
+    )
     expect(haisi?.sections).toEqual([
       {
         eyebrow: 'FIELD WORK',
@@ -104,7 +107,7 @@ describe('portfolio content', () => {
       {
         eyebrow: 'METHODS',
         title: '信号处理方法',
-        body: '围绕 OFDM、DSSS 与水声图像通信，开展频谱分析、功率谱估计和噪声特征提取。'
+        body: '引入 OFDM 多载波调制与 DSSS 直接序列扩频技术，围绕水声图像通信开展频谱分析、功率谱估计和噪声特征提取。'
       },
       {
         eyebrow: 'EVIDENCE',
@@ -116,8 +119,12 @@ describe('portfolio content', () => {
       'assets/projects/haisi/participation-proof.png',
       'assets/projects/haisi/receiver-array.png',
       'assets/projects/haisi/transmitter.png',
-      'assets/projects/haisi/image-transmission-comparison.png'
+      'assets/projects/haisi/image-transmission-comparison.png',
+      'assets/projects/haisi/ofdm-principle.png',
+      'assets/projects/haisi/dsss-principle.png'
     ])
+    expect(haisi?.evidence.map((item) => item.caption).join(' ')).toContain('OFDM 技术')
+    expect(haisi?.evidence.map((item) => item.caption).join(' ')).toContain('DSSS 技术')
   })
 
   it('attaches media and official reports to the haisi voyage materials', () => {
