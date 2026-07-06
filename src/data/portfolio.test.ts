@@ -129,7 +129,7 @@ describe('portfolio content', () => {
     const haisi = projects.find((project) => project.slug === 'haisi')
 
     expect(haisi?.summary).toBe(
-      '依托真实海上航次，系统开展水声通信验证、环境噪声测量与频谱分析，完整沉淀海试工程实践经验。'
+      '依托真实海上航次，参与水声通信验证、环境噪声测量与频谱分析，积累海试工程实践经验。'
     )
     expect(haisi?.sections).toEqual([
       {
@@ -145,7 +145,7 @@ describe('portfolio content', () => {
       {
         eyebrow: 'EVIDENCE',
         title: '实验支撑材料',
-        body: '通过波形、频谱、航次照片与实验记录，呈现项目从现场采集到数据分析的完整链路。'
+        body: '通过波形、频谱、航次照片与实验记录，呈现从现场采集到数据分析的主要过程。'
       }
     ])
     expect(haisi?.evidence.map((item) => item.src)).toEqual([
@@ -166,7 +166,7 @@ describe('portfolio content', () => {
     expect(haisi?.reports).toHaveLength(26)
     expect(haisi?.reports?.map((report) => report.category)).toEqual(
       expect.arrayContaining([
-        '国家级权威媒体报道',
+        '国家级媒体报道',
         '省级媒体报道',
         '市级媒体报道',
         '厦门大学官方报道',

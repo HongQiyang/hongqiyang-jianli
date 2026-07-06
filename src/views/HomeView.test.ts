@@ -60,7 +60,7 @@ describe('HomeView hero', () => {
     expect(text).toContain('CET-4 554 / CET-6 501')
     expect(text).toContain('科研方向')
     expect(text).toContain(
-      '聚焦智能海洋装备与水声感知，目前主要围绕水下声源定位、海洋声学观测与仿生机器人平台开展系统性研究与实践。'
+      '关注智能海洋装备与水声感知，目前主要围绕水下声源定位、海洋声学观测与仿生机器人平台开展学习、实验与项目实践。'
     )
     expect(text).toContain('代表荣誉')
     expect(text).toContain('国家奖学金')
@@ -109,7 +109,7 @@ describe('HomeView hero', () => {
     expect(wrapper.find('.image-lightbox').exists()).toBe(false)
   })
 
-  it('uses the stronger opening statement and leaves email to the contact page', () => {
+  it('uses a measured undergraduate opening statement and leaves email to the contact page', () => {
     const wrapper = mount(HomeView, {
       global: {
         stubs: {
@@ -122,7 +122,7 @@ describe('HomeView hero', () => {
     })
 
     expect(wrapper.find('.hero-intro').text()).toBe(
-      '突破水声通信技术，自主研制仿生机器人与水下探测系统，致力于深海领域的探索与开发'
+      '学习水声通信与仿生机器人方向，参与水下探测平台和实验系统的设计、搭建与验证'
     )
     expect(wrapper.find('.email-link').exists()).toBe(false)
     expect(wrapper.text()).not.toContain('hongqiyang@stu.xmu.edu.cn')
@@ -142,13 +142,13 @@ describe('HomeView hero', () => {
 
     expect(wrapper.find('.focus-section').exists()).toBe(true)
     expect(wrapper.findAll('.focus-module')).toHaveLength(4)
-    expect(wrapper.text()).toContain('核心算法落地')
-    expect(wrapper.text()).toContain('将复杂的声学定位与控制理论，转化为高效、低延迟的可执行代码。')
-    expect(wrapper.text()).toContain('底层硬件架构')
-    expect(wrapper.text()).toContain('从精密前置电路的 PCB 绘制，到多架构主控平台的嵌入式系统开发。')
+    expect(wrapper.text()).toContain('算法与信号处理实践')
+    expect(wrapper.text()).toContain('将声学定位与控制理论，整理为可运行、可验证的程序实现。')
+    expect(wrapper.text()).toContain('硬件与嵌入式实践')
+    expect(wrapper.text()).toContain('参与前置电路 PCB 绘制、多架构主控平台调试与嵌入式系统开发。')
     expect(wrapper.text()).toContain('上层软件开发')
-    expect(wrapper.text()).toContain('搭建直观的交互界面，打通信号处理、视觉识别与数据分析的完整链路。')
+    expect(wrapper.text()).toContain('搭建交互界面，串联信号处理、视觉识别与数据分析流程。')
     expect(wrapper.text()).toContain('水下平台实测')
-    expect(wrapper.text()).toContain('以仿生潜水器为工程载体，全面验证水下感知与控制系统的可靠性。')
+    expect(wrapper.text()).toContain('以仿生潜水器为实验载体，参与水下感知与控制系统的联调和验证。')
   })
 })
