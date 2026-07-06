@@ -1,12 +1,12 @@
 :root {
   color: #eef8ff;
-  background: #061a2e;
+  background: #071f3d;
   font-family:
     Inter, "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui,
     sans-serif;
   font-synthesis: none;
   text-rendering: geometricPrecision;
-  --bg: #061a2e;
+  --bg: #071f3d;
   --ink: #eef8ff;
   --muted: rgba(222, 240, 252, 0.72);
   --soft: rgba(222, 240, 252, 0.5);
@@ -63,10 +63,10 @@ video {
   z-index: -2;
   overflow: hidden;
   background:
-    radial-gradient(circle at 72% 10%, rgba(55, 225, 255, 0.58), transparent 28%),
-    radial-gradient(circle at 16% 82%, rgba(42, 198, 155, 0.34), transparent 28%),
-    radial-gradient(circle at 88% 64%, rgba(128, 246, 255, 0.28), transparent 22%),
-    linear-gradient(135deg, #052415 0%, #06473d 42%, #087a88 72%, #16b8d8 100%);
+    radial-gradient(circle at 72% 10%, rgba(91, 203, 255, 0.62), transparent 28%),
+    radial-gradient(circle at 16% 82%, rgba(38, 139, 255, 0.34), transparent 30%),
+    radial-gradient(circle at 88% 64%, rgba(145, 224, 255, 0.36), transparent 24%),
+    linear-gradient(135deg, #071b3a 0%, #083d72 42%, #0b7dbb 72%, #5bc8f5 100%);
 }
 
 .ocean-backdrop::before {
@@ -86,8 +86,8 @@ video {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(1, 20, 18, 0.62), rgba(3, 45, 52, 0.16) 54%, rgba(1, 20, 24, 0.34)),
-    radial-gradient(circle at 58% 38%, rgba(214, 255, 245, 0.22), transparent 27%);
+    linear-gradient(90deg, rgba(3, 18, 46, 0.54), rgba(8, 73, 125, 0.14) 54%, rgba(4, 35, 72, 0.24)),
+    radial-gradient(circle at 58% 38%, rgba(216, 244, 255, 0.24), transparent 27%);
 }
 
 .sun-shafts {
