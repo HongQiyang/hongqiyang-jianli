@@ -7,6 +7,7 @@
         <span class="sun-shaft"></span>
         <span class="sun-shaft"></span>
       </div>
+      <div class="caustic-field"></div>
       <div class="light-stream stream-a"></div>
       <div class="light-stream stream-b"></div>
       <div class="ethereal-veil"></div>
@@ -32,7 +33,14 @@
           <span></span>
         </div>
       </div>
-      <div class="sonar-interface"></div>
+      <div class="sonar-interface">
+        <span class="sonar-pulse"></span>
+        <span class="sonar-pulse"></span>
+        <span class="sonar-pulse"></span>
+        <span class="sonar-data-stream"></span>
+        <span class="sonar-data-stream"></span>
+        <span class="sonar-data-stream"></span>
+      </div>
       <div class="frequency-grid">
         <span>dB</span>
         <i></i>

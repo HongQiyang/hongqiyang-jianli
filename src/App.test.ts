@@ -34,6 +34,9 @@ describe('App background', () => {
     expect(wrapper.find('.frequency-grid').exists()).toBe(true)
     expect(wrapper.find('.acoustic-microphone').exists()).toBe(true)
     expect(wrapper.findAll('.sound-curve')).toHaveLength(3)
+    expect(wrapper.find('.caustic-field').exists()).toBe(true)
+    expect(wrapper.findAll('.sonar-pulse')).toHaveLength(3)
+    expect(wrapper.findAll('.sonar-data-stream')).toHaveLength(3)
   })
 })
 
