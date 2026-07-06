@@ -36,6 +36,10 @@ describe('portfolio content', () => {
     expect(profile.honors.map((honor) => honor.label)).toContain(
       '两项第十八届先进机器人及仿真技术大赛国家级三等奖'
     )
+    expect(profile.honors.map((honor) => honor.label).slice(3, 5)).toEqual([
+      '校优秀三好学生',
+      '三好学生'
+    ])
     expect(honorProofs.map((proof) => proof.src)).toEqual([
       'assets/honors/national-scholarship.png',
       'assets/honors/xmu-commendation.png',

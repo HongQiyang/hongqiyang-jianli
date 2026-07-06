@@ -199,9 +199,14 @@ export const profile = {
           src: 'assets/honors/excellent-student-2024.png',
           alt: '厦门大学优秀三好学生证书',
           caption: '厦门大学优秀三好学生：2024年9月获评。'
-        },
+        }
+      ]
+    },
+    {
+      label: '三好学生',
+      proofs: [
         {
-          label: '三好学生',
+          label: '证明',
           kind: 'image',
           src: 'assets/honors/merit-student-2025.png',
           alt: '厦门大学三好学生证书',
