@@ -985,7 +985,7 @@ h2 {
 .timeline-title-link::after,
 .report-card em::after,
 .practice-attachment-card strong::after,
-.contact-card strong::after {
+.contact-mail strong::after {
   content: "";
   width: 0.82em;
   height: 0.82em;
@@ -1008,7 +1008,7 @@ h2 {
 .timeline-title-link:hover::after,
 .report-card:hover em::after,
 .practice-attachment-card:hover strong::after,
-.contact-card:hover strong::after {
+.contact-mail:hover strong::after {
   transform: translate(2px, -2px);
   opacity: 1;
 }

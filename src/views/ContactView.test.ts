@@ -17,6 +17,8 @@ describe('ContactView', () => {
     expect(wrapper.find('.contact-mail').attributes('href')).toBe(
       'mailto:hongqiyang@stu.xmu.edu.cn'
     )
+    expect(wrapper.findAll('a.contact-card')).toHaveLength(1)
+    expect(wrapper.findAll('article.contact-card')).toHaveLength(1)
     expect(wrapper.text()).not.toContain('公开页面仅保留邮箱')
   })
 })
