@@ -34,8 +34,15 @@ describe('portfolio content', () => {
 
     expect(honorProofs).toHaveLength(11)
     expect(profile.honors.map((honor) => honor.label)).toContain(
-      '两项第十八届先进机器人及仿真技术大赛国家级三等奖'
+      '一项第十八届先进机器人及仿真技术大赛国家级三等奖'
     )
+    expect(profile.honors.find((honor) => honor.label.includes('国家级一等奖'))?.proofs?.map((proof) => proof.src)).toEqual([
+      'assets/honors/robot-award-mudskipper-first.png',
+      'assets/honors/robot-award-tuna-third.jpg'
+    ])
+    expect(profile.honors.find((honor) => honor.label.includes('国家级三等奖'))?.proofs?.map((proof) => proof.src)).toEqual([
+      'assets/honors/robot-award-rov-third.png'
+    ])
     expect(profile.honors.map((honor) => honor.label).slice(3, 5)).toEqual([
       '校优秀三好学生',
       '三好学生'

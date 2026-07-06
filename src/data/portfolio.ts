@@ -221,24 +221,24 @@ export const profile = {
       label: '两项第十八届先进机器人及仿真技术大赛国家级一等奖',
       proofs: [
         {
-          label: '一等奖',
+          label: '弹涂鱼',
           kind: 'image',
           src: 'assets/honors/robot-award-mudskipper-first.png',
           alt: '第十八届先进机器人及仿真技术大赛弹涂鱼项目国赛一等奖证书',
           caption: '第十八届先进机器人及仿真技术大赛：弹涂鱼项目国赛一等奖。'
-        }
-      ]
-    },
-    {
-      label: '两项第十八届先进机器人及仿真技术大赛国家级三等奖',
-      proofs: [
+        },
         {
           label: '金枪鱼',
           kind: 'image',
           src: 'assets/honors/robot-award-tuna-third.jpg',
-          alt: '第十八届先进机器人及仿真技术大赛金枪鱼项目国赛三等奖证明',
-          caption: '第十八届先进机器人及仿真技术大赛：金枪鱼项目国赛三等奖证明。'
-        },
+          alt: '第十八届先进机器人及仿真技术大赛金枪鱼项目一等奖证明',
+          caption: '第十八届先进机器人及仿真技术大赛：金枪鱼项目福建赛区一等奖。'
+        }
+      ]
+    },
+    {
+      label: '一项第十八届先进机器人及仿真技术大赛国家级三等奖',
+      proofs: [
         {
           label: 'ROV',
           kind: 'image',
