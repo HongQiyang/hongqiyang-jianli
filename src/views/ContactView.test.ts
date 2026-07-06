@@ -19,6 +19,8 @@ describe('ContactView', () => {
     )
     expect(wrapper.findAll('a.contact-card')).toHaveLength(1)
     expect(wrapper.findAll('article.contact-card')).toHaveLength(1)
+    expect(wrapper.find('article.contact-card').attributes('href')).toBeUndefined()
+    expect(wrapper.find('article.contact-card').classes()).not.toContain('contact-mail')
     expect(wrapper.text()).not.toContain('公开页面仅保留邮箱')
   })
 })

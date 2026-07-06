@@ -2064,14 +2064,18 @@ h2 {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+  align-items: stretch;
   margin-top: 38px;
 }
 
 .contact-card {
+  width: 100%;
   min-height: 160px;
+  margin-top: 0;
   display: grid;
+  align-items: start;
   align-content: start;
   gap: 12px;
   border: 1px solid rgba(189, 235, 255, 0.2);
@@ -2088,7 +2092,7 @@ h2 {
     box-shadow 180ms ease;
 }
 
-.contact-card:hover {
+a.contact-card:hover {
   transform: translateY(-3px);
   border-color: rgba(96, 241, 232, 0.56);
   box-shadow:
