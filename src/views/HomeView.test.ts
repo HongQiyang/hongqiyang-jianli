@@ -122,7 +122,7 @@ describe('HomeView hero', () => {
     })
 
     expect(wrapper.find('.hero-intro').text()).toBe(
-      '学习水声通信与仿生机器人方向，参与水下探测平台和实验系统的设计、搭建与验证'
+      '聚焦水声通信与仿生机器人研究方向，协助完成水下探测平台与实验系统的设计、开发与实验验证'
     )
     expect(wrapper.find('.email-link').exists()).toBe(false)
     expect(wrapper.text()).not.toContain('hongqiyang@stu.xmu.edu.cn')

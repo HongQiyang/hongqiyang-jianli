@@ -148,7 +148,7 @@ export const contact = {
 export const profile = {
   title: '洪旗阳 | 海洋声学与仿生机器人',
   subtitle: 'Ocean Acoustics · Biomimetic Robotics · Underwater Systems',
-  intro: '学习水声通信与仿生机器人方向，参与水下探测平台和实验系统的设计、搭建与验证',
+  intro: '聚焦水声通信与仿生机器人研究方向，协助完成水下探测平台与实验系统的设计、开发与实验验证',
   identity: '厦门大学 · 海洋技术（海洋物理方向）· 本科生',
   metrics: ['GPA 3.80 / 4.00', '专业排名 4 / 54', 'CET-4 554 / CET-6 501'],
   researchObjective:
@@ -740,7 +740,7 @@ export const projects: Project[] = [
     title: '厦门大学第六届“海丝学堂”航次与水声信道分析',
     status: 'Field Analysis',
     summary:
-      '依托真实海上航次，参与水声通信验证、环境噪声测量与频谱分析，积累海试工程实践经验。',
+      '依托南海科考航次，参与水声通信验证、环境噪声测量与频谱分析，积累海试工程实践经验。',
     keywords: ['航次实验', 'OFDM', 'DSSS', '环境噪声', '频谱分析'],
     heroImage: 'assets/projects/haisi/voyage-hero.jpg',
     sections: [

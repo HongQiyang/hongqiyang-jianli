@@ -129,7 +129,7 @@ describe('portfolio content', () => {
     const haisi = projects.find((project) => project.slug === 'haisi')
 
     expect(haisi?.summary).toBe(
-      '依托真实海上航次，参与水声通信验证、环境噪声测量与频谱分析，积累海试工程实践经验。'
+      '依托南海科考航次，参与水声通信验证、环境噪声测量与频谱分析，积累海试工程实践经验。'
     )
     expect(haisi?.sections).toEqual([
       {
